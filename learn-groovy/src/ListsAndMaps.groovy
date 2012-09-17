@@ -32,3 +32,35 @@ println list5.grep(~/\d+/)
 
 // No slicing ? sad...
 //println list4[1:3]
+
+fruitPrices = ["apple":20,"orange":25,"pear":30]
+
+//Just like javascript
+assert fruitPrices["apple"] == 20
+println fruitPrices.apple
+
+// an empty map
+empty = [:]
+assert empty.size() == 0
+
+//We can use string keys without quotes
+morePrices = [apple:20,orange:25,pear:30]
+
+morePrices.grape = 50
+
+println morePrices
+
+veg = [pea:1, carrot:10]
+
+// maps support plus operators
+println morePrices + veg
+
+colorKey = 1
+//Using () we can set any variable value as key
+colors = [0:"Red", (colorKey):"Green"]
+println colors[1]
+
+
+
+
+
