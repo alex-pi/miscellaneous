@@ -32,6 +32,8 @@ target/*
 */target/*
 */target/**/*.*
 */*/target/*
+*/*/*/*/target/*
+*/*/*/target/*
 pom.properties
 
 # IDE's #
