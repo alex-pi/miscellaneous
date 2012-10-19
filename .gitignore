@@ -47,3 +47,6 @@ pom.properties
 
 # Merge tools #
 *.orig
+/java-tests/java-tests/nbproject/private/
+/java-tests/nbproject/private/
+/java-tests/build/
