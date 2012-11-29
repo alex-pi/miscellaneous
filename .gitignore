@@ -40,6 +40,7 @@ pom.properties
 .settings
 .project
 .classpath
+.cache
 
 # Respaldos #
 *.bak

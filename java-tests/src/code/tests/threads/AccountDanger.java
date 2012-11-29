@@ -35,7 +35,7 @@ public class AccountDanger implements Runnable {
             System.out.println(Thread.currentThread().getName()
                 + " is going to withdraw");
             try {
-                Thread.sleep(500);
+                Thread.sleep((int)(Math.random() * 300));
             } catch(InterruptedException ex) { }
 
             acct.withdraw(amt);

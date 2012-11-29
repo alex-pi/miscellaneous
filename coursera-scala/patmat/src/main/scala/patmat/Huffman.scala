@@ -101,7 +101,7 @@ object Huffman {
   def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = {
     def makeLeafList(f: List[(Char, Int)]): List[Leaf] =
       if(f.isEmpty) List()
-      else List(Leaf(f.head._1, f.head._2)) ::: makeLeafList(f.tail)
+      else Leaf(f.head._1, f.head._2) :: makeLeafList(f.tail)
              
     makeLeafList(freqs).sortWith((a,b) => a.weight < b.weight)
   }
@@ -229,8 +229,8 @@ object Huffman {
       case h :: tail => t match {
 		  case Leaf(char, weight) => inner(tree, tail, accu)
 		  case Fork(left, right, chars, weight) => 
-		    if(Huffman.chars(left).contains(h)) inner(left, tx, accu ::: List(0))
-		    else inner(right, tx, accu ::: List(1))        
+		    if(Huffman.chars(left).contains(h)) inner(left, tx, accu :+ 0)
+		    else inner(right, tx, accu :+ 1)        
       }
     }
     
@@ -263,8 +263,8 @@ object Huffman {
       def inner(t: CodeTree, lb: List[Bit]): CodeTable = t match {
         case Leaf(char, weight) => List((char, lb))
         case Fork(left, right, chars, weight) => 
-          mergeCodeTables(inner(left, lb ::: List(0))
-              , inner(right, lb ::: List(1)))
+          mergeCodeTables(inner(left, lb :+ 0)
+              , inner(right, lb :+ 1))
       }
         
       inner(tree, List())
