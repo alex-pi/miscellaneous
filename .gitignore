@@ -41,6 +41,8 @@ pom.properties
 .project
 .classpath
 .cache
+.idea
+*.iml
 
 # Respaldos #
 *.bak
