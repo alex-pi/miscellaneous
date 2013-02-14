@@ -17,7 +17,7 @@ public class LOL {
         
         File x = new File("prueba.txt");
         System.out.println(x.canWrite());
-        "".trim
+        "".trim();
     }
       
     interface A{
