@@ -61,10 +61,12 @@ public class PercolationStats {
         int n = Integer.parseInt(args[0]);
         int t = Integer.parseInt(args[1]);
 
+        Stopwatch sw = new Stopwatch();
         PercolationStats per = new PercolationStats(n, t);
         StdOut.printf("mean                     = %1$.10f\n", per.mean());
         StdOut.printf("stddev                   = %1$.10f\n", per.stddev());
         StdOut.printf("95%% confidence interval  = %1$.10f, %2$.10f\n"
                 , per.confidenceLo(), per.confidenceHi());
+        StdOut.printf("Elapsed time             = %1$f seconds", sw.elapsedTime());
     }
 }

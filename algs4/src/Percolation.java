@@ -11,7 +11,9 @@ public class Percolation {
     private int bottom;
     private int openCount;
     private boolean[][] grid;
+    //private boolean[][] fulls;
     private WeightedQuickUnionUF wquf;
+    private WeightedQuickUnionUF fulls;
 
     public Percolation(int N) {
         this.n = N;
@@ -19,6 +21,7 @@ public class Percolation {
         this.top = n*n;
         this.bottom = n*n + 1;
         this.wquf = new WeightedQuickUnionUF((n*n)+2);
+        this.fulls = new WeightedQuickUnionUF((n*n)+1);
     }
 
     public void open(int i, int j) {
@@ -36,19 +39,25 @@ public class Percolation {
         int indexQU = r*n + c; 
         if (tryUp && isOpen(i-1, j)) {
             this.wquf.union(indexQU, (r-1)*n + c);
+            this.fulls.union(indexQU, (r-1)*n + c);
         }
         if (tryDown && isOpen(i+1, j)) {
             this.wquf.union(indexQU, (r+1)*n + c);
+            this.fulls.union(indexQU, (r+1)*n + c);
         }
         if (tryLeft && isOpen(i, j-1)) {
             this.wquf.union(indexQU, r*n + c-1);
+            this.fulls.union(indexQU, r*n + c-1);
         }
         if (tryRight && isOpen(i, j+1)) {
             this.wquf.union(indexQU, r*n + c+1);
+            this.fulls.union(indexQU, r*n + c+1);
         }
         
-        if (i == 1)
+        if (i == 1) {
             this.wquf.union(indexQU, top);
+            this.fulls.union(indexQU, top);
+        }
         if (i == n)
             this.wquf.union(indexQU, bottom);
     }
@@ -67,14 +76,14 @@ public class Percolation {
         checkBounds(i, j);
         int r = i-1;
         int c = j-1;
-        return isOpen(i, j) && this.wquf.connected(top, r*n + c);
+        return isOpen(i, j) && this.fulls.connected(top, r*n + c);
     }
 
     public boolean percolates() {
         return this.wquf.connected(top, bottom);
     }
 
-    /*public int getOpenCount() {
+    public int getOpenCount() {
         return openCount;
     }
 
@@ -91,5 +100,5 @@ public class Percolation {
         }
 
         return sb.toString();
-    }*/
+    }
 }

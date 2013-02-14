@@ -142,6 +142,17 @@ public class PercolationTest {
         }
     }
 
+    @Test
+    public void testBackWash() {
+        openSitesWithOutPercolating();
+        this.percolation.open(4, 4);
+        Assert.assertTrue(this.percolation.percolates());
+        Assert.assertTrue(this.percolation.isFull(3, 5));
+
+        Assert.assertFalse(this.percolation.isFull(4, 1));
+        Assert.assertFalse(this.percolation.isFull(3, 2));
+    }
+
     private void openSitesWithOutPercolating() {
         percolation.open(1, 2);
         percolation.open(1, 1);
