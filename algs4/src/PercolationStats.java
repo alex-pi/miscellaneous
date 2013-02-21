@@ -31,7 +31,7 @@ public class PercolationStats {
             }
             double threshold = (double) openCount/numNodes;
             this.thresholds[t] = threshold;
-            //StdOut.println(percolation);
+            StdOut.println(percolation);
         }
     }
 
