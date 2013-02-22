@@ -93,7 +93,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return idx;
     }
 
-    private void resize(int newSize) {
+    private void resize(int s) {
+        int newSize = s;
+        if (newSize == 0)
+            newSize = 1;
         Object[] qn = new Object[newSize];
 
         int pos = 0;

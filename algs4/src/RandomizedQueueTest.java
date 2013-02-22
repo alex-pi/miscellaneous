@@ -56,6 +56,20 @@ public class RandomizedQueueTest {
     }
 
     @Test
+    public void testDequeueAllThenEnqueue() {
+        notEmpty.enqueue("Hola");
+        notEmpty.enqueue("Chio");
+        notEmpty.dequeue();
+        notEmpty.dequeue();
+        notEmpty.dequeue();
+        notEmpty.dequeue();
+        Assert.assertTrue(notEmpty.isEmpty());
+        notEmpty.enqueue("Yeee");
+        Assert.assertFalse(notEmpty.isEmpty());
+        Assert.assertEquals("Yeee", notEmpty.sample());
+    }
+
+    @Test
     public void testIterator() {
         rq.enqueue("Hola");
         rq.enqueue("Chio");
