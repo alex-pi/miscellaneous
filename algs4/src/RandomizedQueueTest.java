@@ -80,13 +80,33 @@ public class RandomizedQueueTest {
         Assert.assertEquals(2, count);
     }
 
-    @Test
-    public void testBigIteration() {
+    private RandomizedQueue<Integer> createRq(int size) {
         RandomizedQueue<Integer> rqi = new RandomizedQueue<Integer>();
-        int size = 5000000;
+
         for (int i = 1; i <= size; i++) {
             rqi.enqueue(i);
         }
+
+        return rqi;
+    }
+
+    @Test
+    public void testDequeueBigOne() {
+        int size = 5000000;
+        RandomizedQueue<Integer> rqi = createRq(size);
+
+        int i;
+        for (i = 1; i <= size; i++) {
+            int num = rqi.dequeue();
+            Assert.assertTrue(num >= 1 && num <= size);
+        }
+        Assert.assertEquals(size, i-1);
+    }
+
+    @Test
+    public void testBigIteration() {
+        int size = 5000000;
+        RandomizedQueue<Integer> rqi = createRq(size);
 
         int count = 0;
         for (int num : rqi) {
