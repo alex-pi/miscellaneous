@@ -18,37 +18,32 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     public Iterator<Item> iterator() {
-        return new Iterator<Item>() {
-            private Item[] items;
-            private int toIterate;
+        class RandomizedIterator implements Iterator<Item> {
+            private RandomizedQueue<Item> aux;
 
+            public RandomizedIterator() {
+                aux = new RandomizedQueue<Item>();
+
+                for (int i = head; i < tail; i++) {
+                    if (rq[i] != null) {
+                        aux.enqueue(rq[i]);
+                    }
+                }
+            }
             public boolean hasNext() {
-                return toIterate > 0;
+                return !aux.isEmpty();
             }
             public Item next() {
-                if (toIterate <= 0) throw new NoSuchElementException();
-                int idx = randomIndex(0, size, items);
-                Item item = items[idx];
-                toIterate--;
-                items[idx] = null;
+                if (aux.isEmpty()) throw new NoSuchElementException();
+                Item item = aux.dequeue();
 
                 return item;
             }
             public void remove() { throw new UnsupportedOperationException(); }
 
-            public Iterator<Item> init() {
-                items = (Item[]) new Object[size];
+        }
 
-                int pos = 0;
-                for (int i = head; i < tail; i++) {
-                    if (rq[i] != null) {
-                        items[pos++] = rq[i];
-                    }
-                }
-                toIterate = size;
-                return this;
-            }
-        } .init();
+        return new RandomizedIterator();
     }
 
     public boolean isEmpty() {
