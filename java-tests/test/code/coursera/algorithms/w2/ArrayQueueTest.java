@@ -1,4 +1,4 @@
-package test.code.coursera.algorithms.w2;
+package code.coursera.algorithms.w2;
 
 import code.coursera.algorithms.w2.ArrayQueue;
 import org.junit.Assert;
