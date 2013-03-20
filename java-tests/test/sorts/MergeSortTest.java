@@ -1,4 +1,4 @@
-package test.code.tests.algorithms.sorts;
+package sorts;
 
 import org.junit.Before;
 import org.junit.Test;

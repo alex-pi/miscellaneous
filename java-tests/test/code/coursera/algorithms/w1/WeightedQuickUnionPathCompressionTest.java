@@ -1,4 +1,4 @@
-package test.code.coursera.algorithms.w1;
+package code.coursera.algorithms.w1;
 
 import code.coursera.algorithms.w1.WeightedQuickUnionPathCompression;
 import org.junit.Assert;

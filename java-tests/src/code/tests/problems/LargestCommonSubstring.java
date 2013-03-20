@@ -22,7 +22,7 @@ import java.util.Arrays;
  *   10 pillow
  *   12 w
  * 
- * All the suffixes alphabetically ordered are present here (the first one has a space). So,
+ * All the suffixes alphabetically asc are present here (the first one has a space). So,
  * the suffixes 4 and 5 share the largest common prefix (llo), which is also de "Largest repeated substring".
  * 
  * Therefore, the LCS problem can be solved building a suffix array for "hellopillow" and adding restrictions
