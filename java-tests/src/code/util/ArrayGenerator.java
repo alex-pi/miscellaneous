@@ -16,6 +16,15 @@ public class ArrayGenerator {
         return arr;
     }
 
+    public static Integer[] random(int n, int min, int max) {
+        Integer[] arr = new Integer[n];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = StdRandom.uniform(min, max);
+        }
+
+        return arr;
+    }
+
     public static Integer[] asc(int n) {
         Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {

@@ -1,13 +1,15 @@
 package code.coursera.algorithms.w2;
 
+import java.util.Comparator;
+
 /**
  * User: pi
  * Date: 2/27/13
  * Time: 6:50 PM
  */
-public class Shell implements Sorter {
+public class Shell extends AbstractSorter {
 
-    public void sort(Comparable[] arr) {
+    public void sort(Object[] arr, Comparator c) {
 
         int n = arr.length;
         int h = 1;
@@ -15,24 +17,10 @@ public class Shell implements Sorter {
 
         while (h >= 1) {
             for (int i = h; i < n; i++) {
-                for (int j = i; j >= h && less(arr[j], arr[j-h]); j-=h)
+                for (int j = i; j >= h && less(arr[j], arr[j-h], c); j-=h)
                     exch(j, j-1, arr);
             }
             h = h/3;
         }
-    }
-
-    public boolean less(Comparable a, Comparable b) {
-        return a.compareTo(b) < 0;
-    }
-
-    public boolean lessOrEqual(Comparable a, Comparable b) {
-        return a.compareTo(b) <= 0;
-    }
-
-    public void exch(int j, int k, Comparable... arr) {
-        Comparable a = arr[j];
-        arr[j] = arr[k];
-        arr[k] = a;
     }
 }

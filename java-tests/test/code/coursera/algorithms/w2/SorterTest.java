@@ -16,21 +16,25 @@ public abstract class SorterTest {
     String[] small;
     String[] smallSorted;
     Double[] big;
+    Double[] superBig;
     Double[] notSoSmall;
     Double[] notSoBig;
     Integer[] shuffled;
     Integer[] partiallySorted;
     Integer[] reverseSorted;
-    Sorter sorter;
+    Integer[] bigRepeated;
+    protected Sorter sorter;
 
     @Before
     public void before() {
         small = new String[]{"pi", "bob", "zoz", "fear", "all"};
         smallSorted = new String[]{"all", "bob", "fear", "pi", "zoz"};
 
-        big = ArrayGenerator.random(100000, -1000000, 1000000);
-        notSoBig = ArrayGenerator.random(1000, -10000, 10000);
-        notSoSmall = ArrayGenerator.random(100, -1000, 1000);
+        big = ArrayGenerator.random(100000, -1000000l, 1000000l);
+        bigRepeated = ArrayGenerator.random(1000000, 0, 50);
+        superBig = ArrayGenerator.random(1000000, -10000000l, 10000000l);
+        notSoBig = ArrayGenerator.random(1000, -10000l, 10000l);
+        notSoSmall = ArrayGenerator.random(100, -1000l, 1000l);
         partiallySorted = ArrayGenerator.asc(100000);
         ArrayGenerator.exchn(4000, partiallySorted);
         reverseSorted = ArrayGenerator.desc(100000);
@@ -49,6 +53,22 @@ public abstract class SorterTest {
         sorter.sort(big);
         for (int i = 0; i < big.length-1; i++) {
             Assert.assertTrue(sorter.lessOrEqual(big[i], big[i + 1]));
+        }
+    }
+
+    @Test
+    public void testRandomBigRepeatedSort() {
+        sorter.sort(bigRepeated);
+        for (int i = 0; i < bigRepeated.length-1; i++) {
+            Assert.assertTrue(sorter.lessOrEqual(bigRepeated[i], bigRepeated[i + 1]));
+        }
+    }
+
+    @Test(timeout = 50000)
+    public void testRandomSuperBigSort() {
+        sorter.sort(superBig);
+        for (int i = 0; i < superBig.length-1; i++) {
+            Assert.assertTrue(sorter.lessOrEqual(superBig[i], superBig[i + 1]));
         }
     }
 
