@@ -19,17 +19,26 @@ public class InnerClassesTest {
         in1.doSomething();
         in1.doMore();
     }
+
+    static  {
+        class LOL{};
+    }
+
+    interface Papadril {
+        interface Lala {}
+    }
     
     class Inner1{
         private Integer y = 2;
         private Integer x = 3;
+        public static final String s = "";
         
         class InnerInner {
             public void whoAreYou(){
                 System.out.println("I'm the father.");
             }
         }
-        
+
         //No static members are allowed inside inner classes
         //public static Integer x = 1;
         
@@ -39,6 +48,12 @@ public class InnerClassesTest {
             //We can c all the private members of our Outer class
             System.out.println(InnerClassesTest.this.x);
             System.out.println(this.y);
+
+            new Papadril(){
+                public void modo() {
+                    int xxx = x;
+                }
+            };
             
             //Method-Innerclass can only be instiated inside this method
             class MethodInnerClass {

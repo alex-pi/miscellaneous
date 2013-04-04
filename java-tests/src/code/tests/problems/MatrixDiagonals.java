@@ -37,7 +37,7 @@ public class MatrixDiagonals {
         int diags = cols+rows-1;
 
         int rb = 0;
-        for(int i = 1 ; i <= diags ; i++){
+        for(int i = 1 ; i <= diags ; i++) {
             int r = (i>cols)? ++rb:rb; 
             int c = (i>cols)? cols-1:i-1;
             while(r < rows && c >= 0){
