@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <a prop1="val1">
+        <ab>valueab</ab>
+    </a>
+    <b propb1="valb1"> <ba>valueba</ba>
+        <bb propbb1="valbb1">
+            <bba>valuebba</bba>
+        </bb>
+    </b>
+</root>

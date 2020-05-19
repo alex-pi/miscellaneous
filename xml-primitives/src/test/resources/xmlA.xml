@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <a prop1="val1">
+        <aa>valueaa</aa>
+        <ab>valueab</ab>
+    </a>
+    <b propb1="valb1">
+        <aa>valueaa_en_b</aa>
+        <ba>valueba</ba>
+        <bb propbb1="valbb1">
+            <bba>valuebba</bba>
+        </bb>
+    </b>
+</root>

@@ -1,0 +1,15 @@
+<root>
+    <a prop1="xmlB">
+        <aa propaa="fromxmlB"/>
+        <ab><un/></ab>
+        <az>azval</az>
+    </a>
+    <b propb1="valb1">
+        <aa>valueaa_en_b</aa>
+        <ba>valueba</ba>
+        <bb propbb1="valbb1">
+            <bba>fromxmlB</bba>
+            <bbz>valuebbz</bbz>
+        </bb>
+    </b>
+</root>

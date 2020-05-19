@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <a>
+        <aa>thisShouldBeThere</aa>
+        <xx>
+            <ab id="5">
+                <xxabb>shouldBeThere</xxabb>
+                <xxaba>shouldBeThere</xxaba>
+            </ab>
+        </xx>
+        <ab id="1">
+            <abb>valueabb1</abb>
+            <aba>valueaba1</aba>
+        </ab>
+        <ab id="3">
+            <aba>valueaba3</aba>
+            <abb>valueabb3</abb>
+            <abc>
+                <abc1>valueabc1</abc1>
+            </abc>
+        </ab>
+        <ab id="2">
+            <abb>valueabb2</abb>
+            <aba>valueaba2</aba>
+        </ab>
+        <zz>
+            <ab id="4">yyyy</ab>
+        </zz>
+        <ac>thisShouldBeThere</ac>
+    </a>
+    <b propb1="valb1">
+        <ba>thisShouldBeThere</ba>
+        <bb id="1">
+            <bba>valuebba</bba>
+        </bb>
+    </b>
+</root>

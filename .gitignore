@@ -27,13 +27,16 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
-# Targets #
+# Targets and Builds #
 target/*
 */target/*
 */target/**/*.*
 */*/target/*
 */*/*/*/target/*
 */*/*/target/*
+.gradle
+.kotlintest
+**/build/**
 pom.properties
 
 # IDE's #
