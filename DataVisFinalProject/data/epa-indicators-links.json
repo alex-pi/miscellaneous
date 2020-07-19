@@ -1,0 +1,112 @@
+[
+  {
+    "source": 12,
+    "target": 13,
+    "desc": "Increasing emissions of greenhouse gases due to human activities worldwide have led to a substantial increase in atmospheric concentrations of long-lived and other greenhouse gases."
+  },
+  {
+    "source": 21,
+    "target": 13,
+    "desc": "Concentrations of heat-trapping greenhouse gases are increasing in the Earth’s atmosphere. In response, average temperatures at the Earth’s surface are increasing and are expected to continue rising."
+  },
+  {
+    "source": 24,
+    "target": 32,
+    "desc": "Warmer oceans increase the amount of water that evaporates into the air. When more moisture-laden air moves over land or converges into a storm system, it can produce more intense precipitation."
+  },
+  {
+    "source": 25,
+    "target": 32,
+    "desc": "Climate change is expected to affect tropical cyclones by increasing sea surface temperatures, a key factor that influences cyclone formation and behavior."
+  },
+  {
+    "source": 31,
+    "target": 32,
+    "desc": "Ocean temperature plays an important role in the Earth’s climate system—particularly sea surface temperature."
+  },
+  {
+    "source": 31,
+    "target": 33,
+    "desc": "Water expands slightly as it gets warmer, an increase in ocean heat content will also increase the volume of water in the ocean, which is one cause of the observed increases in sea level."
+  },
+  {
+    "source": 33,
+    "target": 43,
+    "desc": "Changes in the volume of water and ice on land (namely glaciers and ice sheets) can increase or decrease the volume of water in the ocean."
+  },
+  {
+    "source": 34,
+    "target": 33,
+    "desc": "Floods are happening more often as rising sea level reduces the gap between average sea level and the height of the land."
+  },
+  {
+    "source": 35,
+    "target": 13,
+    "desc": "Although the ocean’s ability to take up carbon dioxide prevents atmospheric levels from climbing even higher, rising levels of carbon dioxide dissolved in the ocean can have a negative effect on some marine life."
+  },
+  {
+    "source": 41,
+    "target": 32,
+    "desc": "Sea ice [also] keeps the air cool by forming a barrier between the cold air above and the relatively warmer water below."
+  },
+  {
+    "source": 43,
+    "target": 33,
+    "desc": "If glaciers lose more ice than they can accumulate through new snowfall, they ultimately add more water to the oceans, leading to a rise in sea level."
+  },
+  {
+    "source": 46,
+    "target": 21,
+    "desc": "The overall amount of snow cover affects patterns of heating and cooling over the Earth’s surface."
+  },
+  {
+    "source": 52,
+    "target": 21,
+    "desc": "Extreme heat events (heat waves) are expected to become longer, more frequent, and more intense in the future."
+  },
+  {
+    "source": 54,
+    "target": 21,
+    "desc": "The life cycle and prevalence of deer ticks are strongly influenced by temperature.4,5 For example, deer ticks are mostly active when temperatures are above 45˚F, and they thrive in areas with at least 85-percent humidity."
+  },
+  {
+    "source": 56,
+    "target": 21,
+    "desc": "Overall, warming is expected to have negative effects on yields of major crops, but crops in some individual locations may benefit."
+  },
+  {
+    "source": 61,
+    "target": 21,
+    "desc": "Climate change threatens to increase the frequency, extent, and severity of fires through increased temperatures and drought."
+  },
+  {
+    "source": 61,
+    "target": 13,
+    "desc": "Forests in particular store large amounts of carbon. When they burn, they release carbon dioxide into the atmosphere, which in turn contributes to climate change."
+  },
+  {
+    "source": 63,
+    "target": 21,
+    "desc": "As rising air temperatures (see the U.S. and Global Temperature indicator) cause stream temperatures to rise, warmer stream water coming into the bay can stress plants and animals and worsen the effects of nutrient pollution."
+  },
+  {
+    "source": 65,
+    "target": 21,
+    "desc": "Temperature and precipitation patterns are changing across the United States. Some bird species can adapt to generally warmer temperatures by changing where they live."
+  },
+  {
+    "source": 65,
+    "target": 24,
+    "desc": "Temperature and precipitation patterns are changing across the United States. Some bird species can adapt to generally warmer temperatures by changing where they live."
+  },
+  {
+    "source": 66,
+    "target": 31,
+    "desc": "As climate change causes the oceans to become warmer year-round, however, populations of some species may adapt by shifting away from areas that have become too warm and toward areas that were previously cooler."
+  },
+  {
+    "source": 66,
+    "target": 32,
+    "desc": "As climate change causes the oceans to become warmer year-round, however, populations of some species may adapt by shifting away from areas that have become too warm and toward areas that were previously cooler."
+  }
+]

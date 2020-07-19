@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/lodash.min.js"></script>
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/page-content.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <script src="js/dataHelper.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/lineGraphHelper.js"></script>
+  <script>
+    $(document).ready(function() {
+      main.init();
+    });
+  </script>
+</head>
+
+<body>
+
+<div class="main container">
+  <div class="container">
+    <svg id="main-graph" width="650" height="400"></svg>
+  </div>
+  <div id="ind-section" class="indcont container">
+    <svg id="ind_fig" width="550" height="350"></svg>
+    <p id="ind_overview" class="indtext"><q></q></p>
+  </div>
+</div>
+
+</body>
+
+</html>
