@@ -83,5 +83,16 @@ line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
   font-size: 10pt;
   font-family: sans-serif;
 }
+.lineSeriesMid {
+  stroke-width: 3;
+  fill: none;
+}
+.lineSeriesThin {
+  stroke-width: 1.5;
+  fill: none;
+}
+.lineSeriesDashed {
+  stroke-dasharray: 6;
+}
 /* Graph styles */
 

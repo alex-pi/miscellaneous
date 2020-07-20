@@ -11,6 +11,7 @@
       },
       {
         "ind_id": 13,
+        "fig_id": "ghg-concentrations_fig",
         "ind_desc": "Atmospheric Concentrations",
         "ind_text": "When greenhouse gases are emitted into the atmosphere, many remain there for long time periods ranging from a decade to many millennia. Over time, these gases are removed from the atmosphere by chemical reactions or by emissions sinks, such as the oceans and vegetation, which absorb greenhouse gases from the atmosphere. As a result of human activities, however, these gases are entering the atmosphere more quickly than they are being removed, and thus their concentrations are increasing.",
         "links": []
@@ -55,12 +56,14 @@
       },
       {
         "ind_id": 32,
+        "fig_id": "sea-surface-temp_fig",
         "ind_desc": "Sea Surface Temperature",
         "ind_text": "Changes in sea surface temperature can alter marine ecosystems in several ways. For example, variations in ocean temperature can affect what species of plants, animals, and microbes are present in a location, alter migration and breeding patterns, threaten sensitive ocean life such as corals.  Increases in sea surface temperature have led to an increase in the amount of atmospheric water vapor over the oceans.3 This water vapor feeds weather systems that produce precipitation, increasing the risk of heavy rain and snow.",
         "links": []
       },
       {
         "ind_id": 33,
+        "fig_id": "sea-level_fig",
         "ind_desc": "Sea Level",
         "ind_text": "Changing sea levels can affect human activities in coastal areas. Rising sea level inundates low-lying wetlands and dry land, erodes shorelines, contributes to coastal flooding, and increases the flow of salt water into estuaries and nearby groundwater aquifers.",
         "links": []
@@ -73,6 +76,7 @@
       },
       {
         "ind_id": 35,
+        "fig_id": "ocean-acidity_fig",
         "ind_desc": "Ocean Acidity",
         "ind_text": "Carbon dioxide reacts with sea water to produce carbonic acid. The resulting increase in acidity (measured by lower pH values) changes the balance of minerals in the water. Declining pH can make it more difficult for some animals to thrive. This can lead to broader changes in the overall structure of ocean and coastal ecosystems, and can ultimately affect fish populations and the people who depend on them.",
         "links": []
@@ -85,6 +89,7 @@
     "indicators": [
       {
         "ind_id": 41,
+        "fig_id": "arctic-sea-ice_fig",
         "ind_desc": "Arctic Sea Ice",
         "ind_text": "The extent of area covered by Arctic sea ice is an important indicator of changes in global climate because warmer air and water temperatures are reducing the amount of sea ice present. Because sea ice is light-colored, it reflects more sunlight (solar energy) back to space than liquid water, thereby playing an important role in maintaining the Earth’s energy balance and helping to keep polar regions cool. As the amount of sea ice decreases, the Arctic region’s cooling effect is reduced, and this may initiate a “feedback loop” whereby ocean warming caused by more absorption of solar energy leads to an even greater loss of sea ice and further warming.",
         "links": []
@@ -98,6 +103,7 @@
       },
       {
         "ind_id": 46,
+        "fig_id": "snow-cover_fig",
         "ind_desc": "Snow Cover",
         "ind_text": "As temperature and precipitation patterns change, so can the overall area covered by snow. it also exerts an influence on climate. Because snow is white, it absorbs only a small portion of the sunlight that hits it (10 to 20 percent in the case of fresh snow), and it reflects the rest back to space. More snow means more energy reflects back to space, resulting in cooling, while less snow cover means more energy is absorbed at the Earth’s surface, resulting in warming.",
         "links": []
@@ -110,6 +116,7 @@
     "indicators": [
       {
         "ind_id": 52,
+        "fig_id": "heat-illnesses_fig",
         "ind_desc": "Heat-Related Illnesses",
         "ind_text": "Heat-related illnesses can occur when a person is exposed to high temperatures, such that their body cannot cool itself sufficiently through sweating. Symptoms range from mild swelling, rashes, or cramps to potentially deadly heat exhaustion and heat stroke. Heat is the leading weather-related killer in the United States.",
         "links": []
@@ -136,6 +143,7 @@
     "indicators": [
       {
         "ind_id": 61,
+        "fig_id": "wildfires_fig",
         "ind_desc": "Wildfires",
         "ind_text": "Together, forests, shrubland, and grassland cover more than half of the land area in the United States.1 These ecosystems are important resources, both environmentally and economically. Although wildfires occur naturally and play a long-term role in the health of these ecosystems, climate change threatens to increase the frequency, extent, and severity of fires through increased temperatures and drought.",
         "links": []
@@ -148,12 +156,14 @@
       },
       {
         "ind_id": 65,
+        "fig_id": "bird-ranges_fig",
         "ind_desc": "Bird Wintering Ranges",
         "ind_text": "Some bird species can adapt to generally warmer temperatures by changing where they live—for example, by migrating farther north in the summer but not as far south in the winter, or by shifting inland as winter temperature extremes grow less severe. Non-migratory species might shift as well, expanding into newly suitable habitats while moving out of areas that become less suitable. Other types of birds might not adapt to changing conditions and could experience a population decline as a result.",
         "links": []
       },
       {
         "ind_id": 66,
+        "fig_id": "marine-species_fig",
         "ind_desc": "Marine Species Distribution",
         "ind_text": "Marine species represent a particularly good indicator of warming oceans because they are sensitive to climate and because they have been studied and tracked for many years. Fish are especially mobile, and they may shift their location more easily than species on land because they face fewer physical barriers.1 Also, many marine species, especially fish, do not have fixed nesting places or dwellings that might otherwise compel them to stay in one place.",
         "links": []

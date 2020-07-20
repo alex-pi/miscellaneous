@@ -17,7 +17,7 @@ const dataHelper = (function() {
 
   const loadData = async function(id, url) {
     if(_.isNil(dataCache[id]))
-      dataCache[id] = await d3.csv(url, dataProcessors[id] || defaultProcessor);
+      dataCache[id] = await d3.csv(`${url}?random=${Math.random()}`, dataProcessors[id] || defaultProcessor);
     //_.map(p, dataProcessors.id)
 
     return dataCache[id];
