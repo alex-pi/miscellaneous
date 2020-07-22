@@ -69,12 +69,6 @@
         "links": []
       },
       {
-        "ind_id": 34,
-        "ind_desc": "Coastal Flooding",
-        "ind_text": "As relative sea level rises due to climate change (see the Sea Level indicator), one of the most noticeable consequences is an increase in coastal flooding. Flooding typically occurs during seasonal high tides (“king tides”) and storms that push water toward the shore. In recent years, however, coastal cities are increasingly flooding on days with less extreme tides or little wind, even on sunny days.",
-        "links": []
-      },
-      {
         "ind_id": 35,
         "fig_id": "ocean-acidity_fig",
         "ind_desc": "Ocean Acidity",
@@ -146,12 +140,6 @@
         "fig_id": "wildfires_fig",
         "ind_desc": "Wildfires",
         "ind_text": "Together, forests, shrubland, and grassland cover more than half of the land area in the United States.1 These ecosystems are important resources, both environmentally and economically. Although wildfires occur naturally and play a long-term role in the health of these ecosystems, climate change threatens to increase the frequency, extent, and severity of fires through increased temperatures and drought.",
-        "links": []
-      },
-      {
-        "ind_id": 63,
-        "ind_desc": "Stream Temperature",
-        "ind_text": "Water temperature is an important physical property of every river and stream. Many plants, animals, and other organisms living in streams can flourish only in a specific range of water temperatures. Temperature can affect certain aspects of water quality. For example, higher temperatures reduce levels of dissolved oxygen in the water, which can negatively affect the growth and productivity of aquatic life.",
         "links": []
       },
       {
