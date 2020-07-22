@@ -175,24 +175,20 @@ const forceGraph = (function(config, eventHandler, dh) {
       .on('mouseover', eventHandler.mouseOverNode)
       .on('mouseout', eventHandler.mouseOutNode);
 
-    const glegends = svg
-      .append('g')
-      .attr('class', 'glegends')
-      .attr('transform', `translate(${labelsx},${labelsy})`);
-    const glegend = glegends.selectAll('g')
-      .data(dh.indsByCategory).enter()
-      .append('g')
-      .attr('transform', d => `translate(3,${(d.cat_id - 1) * 20})`);
 
-    glegend.append('circle')
-      .attr('r', node_radius * 0.33)
-      .attr("fill", (d, i) => d3.schemeTableau10[d.cat_id - 1]);
-
-    glegend.append('text')
-      .attr('x', 10)
-      //.attr('y', 0)
-      .attr('alignment-baseline', 'middle')
-      .text(d => d.cat_desc);
+    graphUtils.addLegends({
+      svg: svg,
+      x: labelsx,
+      y: labelsy,
+      colors: function(d, i) {
+        return d3.schemeTableau10[d.cat_id - 1];
+      },
+      legendsData: dh.indsByCategory,
+      texts: function (d, i) {
+        return d.cat_desc;
+      },
+      styleClass: 'glegends'
+    });
 
     const graphConfig =  {
       ggraph: ggraph,

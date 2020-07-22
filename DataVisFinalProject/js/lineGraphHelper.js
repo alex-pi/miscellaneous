@@ -78,6 +78,24 @@ const lineGraphHelper = (function () {
     });
   };
 
+  const addLegends = function(svg, conf) {
+    if(_.isNil(conf.legends)) return;
+    return graphUtils.addLegends({
+      svg: svg,
+      x: conf.legends.x,
+      y: conf.legends.y,
+      colors: function(d, i) {
+        return conf.colorScheme[i];
+      },
+      legendsData: conf.ySeriesNames,
+      texts: function (d, i) {
+        return d;
+      },
+      styleClass: 'indlegends',
+      bg: conf.legends.bg
+    });
+  };
+
   lgh.draw = function (svgId, idGraph, data) {
 
     const svg = d3.select(`#${svgId}`);
@@ -221,6 +239,8 @@ const lineGraphHelper = (function () {
         .attr('class', d => d.styleClass || 'lineSeriesMid');
         //.style("stroke-width", 3)
         //.style("fill", "none");
+
+    addLegends(svg, lgc);
 
     lgh.svg = svg;
     return svg;

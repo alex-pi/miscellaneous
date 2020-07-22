@@ -40,11 +40,13 @@ p.indtext {
 line.link {stroke: gray; cursor: pointer; stroke-width: 4;}
 line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
 .node circle {stroke: white; cursor: pointer;}
-.glegends text {
+
+.glegends {
   font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;
-  color: #1b1e23;
+  fill: #464a52;
   font-size: 14px
 }
+
 .toolTip {
   font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;
   font-size: 14px;
@@ -93,6 +95,13 @@ line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
 }
 .lineSeriesDashed {
   stroke-dasharray: 6;
+}
+.indlegends {
+  fill: #464a52;
+  color: #e7e7dc;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 /* Graph styles */
 

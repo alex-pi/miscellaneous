@@ -15,6 +15,10 @@ const lineGraphConfigs = (function () {
       xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
       baseLine: {
         point: 0
+      },
+      legends: {
+        x: 90,
+        y: 190
       }
     }
 
@@ -61,6 +65,10 @@ const lineGraphConfigs = (function () {
         point: 0,
         text: "1971-2000 Average",
         xy: [20,height/2+3],
+      },
+      legends: {
+        x: width/4,
+        y: 45
       }
     };
 
@@ -113,7 +121,11 @@ const lineGraphConfigs = (function () {
       separateScales: true,
       ySeries: ySeries,
       xDomain: xDomain,
-      xTickValues: _.range(xDomain[0], xDomain[1]+10, 10)
+      xTickValues: _.range(xDomain[0], xDomain[1]+10, 10),
+      legends: {
+        x: 100,
+        y: 53
+      }
     };
 
     return gc;
@@ -144,6 +156,10 @@ const lineGraphConfigs = (function () {
       separateScales: true,
       ySeries: ySeries,
       xDomain: xDomain,
+      legends: {
+        x: width-180,
+        y: 50
+      },
       xTickValues: [1985, 1990, 1995, 2000, 2005, 2010, 2015]
     };
 
@@ -162,6 +178,10 @@ const lineGraphConfigs = (function () {
       yAxisTitle: 'Sea ice extent (million square miles)',
       xDomain: xDomain,
       yDomain: yDomain,
+      legends: {
+        x: 90,
+        y: height-120
+      },
       xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5)
     };
 
@@ -194,10 +214,19 @@ const lineGraphConfigs = (function () {
       separateScales: false,
       ySeries: ySeries,
       xDomain: xDomain,
-      colorScheme: [d3.schemeSet3[2], colorBounds, colorBounds], //TODO defaults are being replaced
+      colorScheme: [d3.schemePaired[7], d3.schemePaired[0], d3.schemePaired[1]],
+      //colorScheme: d3.schemeSet4,
       xTickValues: _.range(xDomain[0], xDomain[1]+5, 5),
       baseLine: {
         point: 0
+      },
+      legends: {
+        x: 100,
+        y: 53,
+        bg: {
+          width: 155,
+          height: 63
+        }
       }
     };
 
@@ -267,7 +296,11 @@ const lineGraphConfigs = (function () {
       separateScales: true,
       ySeries: ySeries,
       xDomain: xDomain,
-      xTickValues: _.range(xDomain[0], xDomain[1], 5)
+      xTickValues: _.range(xDomain[0], xDomain[1], 5),
+      legends: {
+        x: width/3,
+        y: 36
+      }
     };
 
     return gc;
@@ -288,6 +321,10 @@ const lineGraphConfigs = (function () {
       xTickValues: _.range(xDomain[0], xDomain[1] + 10, 10),
       baseLine: {
         point: 0
+      },
+      legends: {
+        x: width/4,
+        y: 50
       }
     };
 
@@ -352,20 +389,20 @@ const lineGraphConfigs = (function () {
   //wildfires_fig
   configs['wildfires_fig'] = (function() {
     const xDomain = [1980, 2015];
-    const yDomain = [0, 200000];
-    const [width, height] = [580, 350];
+    const yDomain = [0, 12];
+    const [width, height] = [550, 350];
     const gc = {
       width: width,
       height: height,
-      margin: {left: 80, right: 60, top: 20, bottom: 55},
       xAxisTitle: 'Year',
-      yAxisTitle: {
-        text: 'Number of fires',
-        yShift: -55
-      },
+      yAxisTitle: 'Area burned (million acres)',
       xDomain: xDomain,
       yDomain: yDomain,
-      xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5)
+      xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
+      legends: {
+        x: width/4,
+        y: 55
+      }
     };
 
     return gc;
