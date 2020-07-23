@@ -58,7 +58,7 @@ const lineGraphHelper = (function () {
       .text(title);
 
     return yAxisG2;
-  }
+  };
 
   const prepareYSeries = function(conf, data) {
     conf.ySeriesNames = _.slice(data.columns, 1);
@@ -247,7 +247,8 @@ const lineGraphHelper = (function () {
   }
 
   lgh.clean = function() {
-    lgh.svg.selectAll('*').remove();
+    if(!_.isNil(lgh.svg))
+      lgh.svg.selectAll('*').remove();
   }
 
   return lgh;

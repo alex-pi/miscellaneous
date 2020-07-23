@@ -31,6 +31,8 @@
   <script src="js/lineGraphHelper.js"></script>
   <script>
     $(document).ready(function() {
+
+      $('#indSection').hide();
       main.init();
     });
   </script>
@@ -39,12 +41,31 @@
 <body>
 
 <div class="main container">
+  <h1>EPA Indicators for Global Warming.</h1>
   <div class="container">
-    <svg id="main-graph" width="650" height="400"></svg>
+    <svg id="main-graph" width="650" height="340"></svg>
   </div>
-  <div id="ind-section" class="indcont container">
-    <svg id="ind_fig" width="550" height="350"></svg>
-    <p id="ind_overview" class="indtext"><q></q></p>
+  <h2>[Select an indicator node from the graph]</h2>
+  <div id="indSection" class="flexcolumn padded">
+
+    <div class="flexrow indcont container padded">
+      <div>
+        <h3>Overview</h3>
+        <p id="ind_overview" class="indtext indoverview"></p>
+      </div>
+      <svg id="ind_fig" width="550" height="350"></svg>
+    </div>
+    <div id="about_fig_sec" class="flexrow justend">
+      <div>
+        <h3>About this graph</h3>
+        <p id="ind_fig_text" class="indtext indfigtext"></p>
+      </div>
+    </div>
+  </div>
+  <div id="nodesTooltip" class="toolTip"></div>
+  <div id="linksTooltip" class="toolTip linksToolTip">
+    <h4 id="title"></h4>
+    <p id="text"></p>
   </div>
 </div>
 

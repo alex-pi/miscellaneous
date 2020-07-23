@@ -1,5 +1,6 @@
 body {
-  font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;
+  /*font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;*/
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 14px;
   display: flex;
   justify-content: center;
@@ -21,48 +22,124 @@ div.main {
   justify-content: center;
 }
 
-.indcont {
+.padded {
+  margin: 5px 5px 5px 5px;
+}
+
+.flexrow {
   display: flex;
   flex-direction: row;
-  padding: 0px 10px 0px 10px;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.indcont {
   justify-content: space-between;
+}
+
+.justend {
+  justify-content: flex-end;
 }
 
 p.indtext {
   font-size: 14px;
-  width: 270px;
   text-align: justify;
   text-justify: inter-word;
+}
+
+#indSection > div{
+  margin-left: 25px;
+}
+
+p.indoverview {
+  width: 290px;
   quotes: "«" "»";
   font-style: italic;
 }
 
+p.indfigtext {
+  width: 500px;
+  font-size: 12px;
+  /*quotes: "«" "»";*/
+  /*font-style: italic;*/
+}
+
+#about_fig_sec {
+  margin-right: 25px;
+}
+
+h1, h2, h3 {
+  color: #8d8b8b;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  background-color: rgba(232, 232, 232, 0.3);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0px 0px 0px 0px;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 4px 20px 4px 20px;
+}
+
+/* force graph style */
 line.link {stroke: gray; cursor: pointer; stroke-width: 4;}
 line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
 .node circle {stroke: white; cursor: pointer;}
 
 .glegends {
-  font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;
+  /*font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;*/
   fill: #464a52;
   font-size: 14px
 }
 
 .toolTip {
-  font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;
+  /*font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;*/
   font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
   position: absolute;
   display: none;
   min-width: 60px;
   height: auto;
-  background: rgb(80, 80, 80);
-  background: rgba(80, 80, 80, 0.7);
+  background: rgb(219, 213, 213);
+  background: rgba(252, 250, 250, 0.7);
   border: none;
-  color: white;
+  color: gray;
   padding: 3px;
   text-align: center;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
-/* Graph styles */
+.linksToolTip {
+  width: 230px;
+  font-size: 12px;
+  text-align: justify;
+  text-justify: inter-word;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.linksToolTip h4 {
+  text-align: center;
+  text-justify: inter-word;
+  margin: 5px 0px 0px 0px;
+}
+
+/* Graph Indicators styles */
 .baseLine {
   stroke-width: 2;
   stroke-dasharray: 6;

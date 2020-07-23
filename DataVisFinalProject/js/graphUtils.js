@@ -48,6 +48,23 @@ const graphUtils = (function(){
 
   };
 
+  utils.calculateElementPosition = function(elementId) {
+    let element = document.querySelector(elementId);
+    let bodyRect = document.body.getBoundingClientRect(),
+      elemRect = element.getBoundingClientRect(),
+      offsettop   = elemRect.top - bodyRect.top,
+      offsetleft   = elemRect.left - bodyRect.left;
+
+    console.log(bodyRect);
+    console.log(elemRect);
+    console.log(`${offsetleft} , ${offsettop}`);
+
+    return {
+      left: offsetleft,
+      top: offsettop
+    }
+  }
+
 
 
   return utils;

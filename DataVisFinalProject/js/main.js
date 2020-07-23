@@ -4,7 +4,12 @@
 // TODO rename to graphEventHandler
 const nodeHandler = (function() {
   const nh = {};
+  let svgGraph;
+  let svgOffSets;
   let tooltip;
+  let linkTooltip;
+  let linkTooltipTitle;
+  let linkTooltipText;
   let node_radius;
   let selectedNode = {};
   let linksel;
@@ -14,18 +19,16 @@ const nodeHandler = (function() {
 
   nh.mouseOverNode = function (d, i) {
     if (d3.event.defaultPrevented) return; // dragged
-    console.log('mouseOverNode');
+    //console.log('mouseOverNode');
     nh.transitionNodesSize(this, node_radius * 1.6);
-    tooltip
-      .style('left', `${d3.event.pageX + 10}px`)
-      .style('top', `${d3.event.pageY}px`)
-      .style('display', 'inline-block')
-      .html(`${d.ind_desc}`);
+    console.log(`${d3.event.pageX + 10}px , ${d3.event.pageY}px`);
+
+    showNodesToolTip([d]);
   };
 
   nh.mouseOutNode = function (d, i) {
     if (d3.event.defaultPrevented) return; // dragged
-    console.log('mouseOutNode');
+    //console.log('mouseOutNode');
     tooltip.style('display', 'none');
     if (!_.isEmpty(selectedNode) && d.ind_id == selectedNode.d.ind_id) return;
     nh.transitionNodesSize(this, node_radius);
@@ -57,6 +60,13 @@ const nodeHandler = (function() {
     console.log('mouseoverLink');
     d3.select(this).transition()
       .attr('class', 'linkh');
+
+    linkTooltip
+      .style('left', `${linkTooltip.calcPosition.x}px`)
+      .style('top', `${linkTooltip.calcPosition.y}px`)
+      .style('display', 'inline-block');
+    linkTooltipText.html(`${d.desc}`);
+    linkTooltipTitle.html(`${d.source.ind_desc} and  ${d.target.ind_desc}`);
     /*Decide where to show the link text*/
   };
 
@@ -66,6 +76,7 @@ const nodeHandler = (function() {
     console.log('mouseoverLink');
     d3.select(this).transition()
       .attr('class', 'link');
+    linkTooltip.style('display', 'none');
     /*Decide where to show the link text*/
   };
 
@@ -90,13 +101,45 @@ const nodeHandler = (function() {
   };
 
   nh.init = function(graph, dataHelper) {
+    svgGraph = graph.config.svg;
     node_radius = graph.config.node_radius;
     linksel = graph.linksel;
     nodesel = graph.nodesel;
     simulation = graph.simulation;
-    tooltip = d3.select("body").append("div").attr("class", "toolTip");
+    //tooltip = d3.select("body").append("div").attr("class", "toolTip");
+    tooltip = d3.select("#nodesTooltip.toolTip");
+    //linkTooltip = d3.select("body").append("div").attr("class", "toolTip");
+    linkTooltip = d3.select("#linksTooltip");
+    linkTooltipTitle = d3.select("#linksTooltip #title");
+    linkTooltipText = d3.select("#linksTooltip #text");
+    nh.calculateLinkTooltipPosition();
     hooks = graph.config.hooks;
+
   };
+
+  nh.calculateLinkTooltipPosition = function() {
+    const pos = graphUtils.calculateElementPosition('#main-graph');
+
+    svgOffSets = pos;
+
+    linkTooltip.calcPosition = {
+      x: pos.left + 500,
+      y: pos.top + 150
+    };
+  };
+
+  function showNodesToolTip(nodesD) {
+    _.forEach(nodesD, nd => {
+      //const x = nd
+      tooltip
+        //.style('left', `${d3.event.pageX + 10}px`)
+        //.style('top', `${d3.event.pageY}px`)
+        .style('left', `${svgOffSets.left + nd.x + 10}px`)
+        .style('top', `${svgOffSets.top + nd.y}px`)
+        .style('display', 'inline-block')
+        .html(`${nd.ind_desc}`);
+    });
+  }
 
   function dragstarted(d) {
     if (!d3.event.active)
@@ -134,13 +177,14 @@ const forceGraph = (function(config, eventHandler, dh) {
         .distance(50)
         .id(d => d.ind_id))
       .force('charge', d3.forceManyBody().strength(-40))
-      .force('center', d3.forceCenter(width / 2 - 130, height / 2 - 40))
+      .force('center', d3.forceCenter(width / 2 - 100, height / 2 - 20))
       .nodes(dh.nodes);
     //.alphaMin(0.222);
 
     simulation.force('link').links(dh.links);
 
     const ggraph = svg.append('g');
+      //.attr('transform', `translate(0,0)`);
 
     const linksel = ggraph
       .selectAll('.link') // difference between selecting .link vs line
@@ -215,7 +259,9 @@ const main = (function() {
   const hooks = {
     clickedNode: function (selectedNode, previousNode) {
         console.log('hook!');
+
         if (!_.isEmpty(previousNode)) {
+          $('#indSection').fadeTo('fast', 0);
           lineGraphHelper.clean();
         }
         const figId = selectedNode.d.fig_id;
@@ -227,7 +273,9 @@ const main = (function() {
           .then( data => {
             const svg = lineGraphHelper.draw('ind_fig', figId, data);
             const indDetails = dataHelper.find('fig_id', figId);
-            $('#ind_overview q').text(indDetails.ind_text);
+            $('#ind_overview').html(`<q>${indDetails.ind_text}</q>`);
+            $('#indSection').fadeTo('medium', 1);
+            //$('#indSection').fadeToggle(1500);
             //setTimeout( () => svg.selectAll('*').remove(), 3000);
           });
     }
@@ -242,6 +290,10 @@ const main = (function() {
       node_radius: 13,
       hooks: hooks
     }, mo.geh, mo.graphData);
+
+    $(window).on('resize', function(){
+      mo.geh.calculateLinkTooltipPosition();
+    });
   };
 
   return mo;
