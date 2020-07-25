@@ -3,6 +3,45 @@ const graphUtils = (function(){
 
   const utils = {};
 
+  utils.addAnnotation = function(conf) {
+
+    const annXOffset = (conf.xOffSet || 0) + conf.x;
+    const annYOffset = (conf.yOffSet || 0) + conf.y;
+    const annotation = conf.g
+      .append('g')
+      //.style('background-color', '#7b7a7a')
+      .attr('transform', `translate(${annXOffset},${annYOffset})`);
+      //.attr('transform', `translate(${conf.x},${conf.y})`);
+
+    annotation.append('text')
+      //.attr('x', 10)
+      //.attr('y', 0)
+      //.attr('alignment-baseline', 'middle')
+      .attr('class', 'indAnnotations')
+      .attr('text-anchor', 'middle')
+      .text(conf.text);
+
+    console.log(annotation.select('text').node().getBBox());
+    if(conf.markPoint) {
+      conf.g
+        .append('circle')
+        .attr('cx', conf.x)
+        .attr('cy', conf.y)
+        .attr("opacity", .6)
+        .attr("fill", 'green')
+        //.attr("stroke", "gray")
+        .attr('r', 10);
+
+      conf.g.append("polyline")
+        .attr("stroke", "green")
+        .attr("opacity", .6)
+        //.style("fill", "green")
+        .attr("stroke-width", 2)
+        .style("stroke-dasharray", 2)
+        .attr("points", `${annXOffset},${annYOffset} , ${conf.x},${conf.y}`);
+    }
+  };
+
   utils.addLegends = function(conf) {
 
     const glegends = conf.svg
@@ -35,8 +74,9 @@ const graphUtils = (function(){
       .text(conf.texts);
 
     // TODO figure out how to add background to the legends
-    /*console.log(`glegends : ${glegends.node().getBBox().height}`);
-    if(!_.isNil(conf.bg)) {
+    //https://stackoverflow.com/questions/32026194/how-to-add-a-background-color-to-d3-text-elements
+    //console.log(`glegends : ${glegends.getBBox().height}`);
+    /*if(!_.isNil(conf.bg)) {
       debugger;
       glegends.append("rect")
         .attr("width", conf.bg.width)
@@ -63,9 +103,7 @@ const graphUtils = (function(){
       left: offsetleft,
       top: offsettop
     }
-  }
-
-
+  };
 
   return utils;
 

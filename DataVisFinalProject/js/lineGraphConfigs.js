@@ -236,7 +236,7 @@ const lineGraphConfigs = (function () {
   //ghg-concentrations_fig
   configs['ghg-concentrations_fig'] = (function() {
     const xDomain = [0, 2016];
-    const yDomain = [0, 450];
+    const yDomain = [240, 450];
     const [width, height] = [600, 350];
     const gc = {
       margin: {left: 60, right: 20, top: 20, bottom: 55},
@@ -246,7 +246,15 @@ const lineGraphConfigs = (function () {
       yAxisTitle: 'Carbon dioxide concentration (ppm)',
       xDomain: xDomain,
       yDomain: yDomain,
-      xTickValues: _.range(xDomain[0], xDomain[1] + 100, 200)
+      xTickValues: _.range(xDomain[0], xDomain[1] + 100, 200),
+      annotations: [{
+        text: 'Beginning of the industrial era',
+        xDataPoint: (dp) => dp.xval >= 1760 && !_.isNil(dp.yval),
+        yOffSet: -40,
+        xOffSet: -60,
+        seriesIndex: 1,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -380,7 +388,29 @@ const lineGraphConfigs = (function () {
       yAxisTitle: 'Snow covered area (million square miles)',
       xDomain: xDomain,
       yDomain: yDomain,
-      xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5)
+      xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
+      annotations: [
+        {
+          text: 'Winter',
+          xDataPoint: 1990,
+          yOffSet: -20
+        },
+        {
+          text: 'Spring',
+          xDataPoint: 1990,
+          yOffSet: -20
+        },
+        {
+          text: 'Fall',
+          xDataPoint: 1990,
+          yOffSet: -20
+        },
+        {
+          text: 'Summer',
+          xDataPoint: 1990,
+          yOffSet: -28
+        }
+      ]
     };
 
     return gc;

@@ -7,6 +7,7 @@
         "ind_id": 12,
         "ind_desc": "Global Greenhouse Gas Emissions",
         "ind_text": "Every country around the world emits greenhouse gases into the atmosphere, meaning the root cause of climate change is truly global in scope. Some countries produce far more greenhouse gases than others, and several factors—such as economic activity (including the composition and efficiency of the economy), population, income level, land use, and climatic conditions—can influence a country’s emissions levels.",
+        "fig_desc": "In 2010, estimated worldwide emissions from human activities totaled nearly 46 billion metric tons of greenhouse gases, expressed as carbon dioxide equivalents. This represents a 35 percent increase from 1990. Energy production and use (including fuels used by vehicles) represent the largest source of greenhouse gas emissions worldwide (about 71 percent of the total in 2010), followed by agriculture (13 percent in 2010).",
         "links": []
       },
       {
@@ -14,6 +15,7 @@
         "fig_id": "ghg-concentrations_fig",
         "ind_desc": "Atmospheric Concentrations",
         "ind_text": "When greenhouse gases are emitted into the atmosphere, many remain there for long time periods ranging from a decade to many millennia. Over time, these gases are removed from the atmosphere by chemical reactions or by emissions sinks, such as the oceans and vegetation, which absorb greenhouse gases from the atmosphere. As a result of human activities, however, these gases are entering the atmosphere more quickly than they are being removed, and thus their concentrations are increasing.",
+        "fig_desc": "The data come from a variety of historical ice core studies and recent air monitoring sites around the world. Each line represents a different data source. Carbon dioxide concentrations have increased substantially since the beginning of the industrial era, rising from an annual average of 280 ppm in the late 1700s to 401 ppm as measured at Mauna Loa in 2015, a 43 percent increase. Almost all of this increase is due to human activities",
         "links": []
       }
     ]
@@ -26,12 +28,14 @@
         "ind_id": 21,
         "ind_desc": "U.S. and Global Temperature",
         "ind_text": "Temperature is a fundamental measurement for describing the climate, and the temperature in particular places can have wide-ranging effects on human life and ecosystems. For example, increases in air temperature can lead to more intense heat waves, which can cause illness and death, especially in vulnerable populations. Annual and seasonal temperature patterns also determine the types of animals and plants that can survive in particular locations. Changes in temperature can disrupt a wide range of natural processes, particularly if these changes occur more quickly than plant and animal species can adapt.",
+        "fig_desc": "Worldwide, 2015 was the warmest year on record and 2006–2015 was the warmest decade on record since thermometer-based observations began. Global average surface temperature has risen at an average rate of 0.15°F per decade since 1901, similar to the rate of warming within the contiguous 48 states. Since the late 1970s, however, the United States has warmed faster than the global rate.",
         "links": []
       },
       {
         "ind_id": 24,
         "ind_desc": "Heavy Precipitation",
         "ind_text": "Climate change can affect the intensity and frequency of precipitation. Warmer oceans increase the amount of water that evaporates into the air. When more moisture-laden air moves over land or converges into a storm system, it can produce more intense precipitation—for example, heavier rain and snow storms.",
+        "fig_desc": "This figure shows the percentage of the land area of the contiguous 48 states where a much greater than normal portion of total annual precipitation has come from extreme single-day precipitation events. The bars represent individual years, while the line is a nine-year weighted average. Over the entire period from 1910 to 2015, the portion of the country experiencing extreme single-day precipitation events increased at a rate of about half a percentage point per decade.",
         "links": []
       },
       {
@@ -39,6 +43,7 @@
         "fig_id": "cyclones_fig",
         "ind_desc": "Tropical Cyclone Activity",
         "ind_text": "The effects of tropical cyclones are numerous and well known. At sea, storms disrupt and endanger shipping traffic. When cyclones encounter land, their intense rains and high winds can cause severe property damage, loss of life, soil erosion, and flooding. The associated storm surge—the large volume of ocean water pushed toward shore by the cyclone’s strong winds—can cause severe flooding and destruction.",
+        "fig_desc": "The Power Dissipation Index (PDI) shows fluctuating cyclone intensity for most of the mid to late 20th century, followed by a noticeable increase since 1995 (similar to Accumulated Cyclone Energy (ACE) Index). These trends are shown with associated variations in sea surface temperature in the tropical North Atlantic for comparison.",
         "links": []
       }
     ]
@@ -52,6 +57,7 @@
         "fig_id": "ocean_heat_fig",
         "ind_desc": "Ocean Heat",
         "ind_text": "When sunlight reaches the Earth’s surface, the world’s oceans absorb some of this energy and store it as heat. This heat is initially absorbed at the surface, but some of it eventually spreads to deeper waters. Increasing greenhouse gas concentrations are trapping more energy from the sun. Because changes in ocean systems occur over centuries, the oceans have not yet warmed as much as the atmosphere, even though they have absorbed more than 90 percent of the Earth’s extra heat since 1955.",
+        "fig_desc": "In three different data analyses, the long-term trend shows that the oceans have become warmer since 1955. For reference, an increase of 1 unit on this graph (1 x 1022 joules) is equal to approximately 18 times the total amount of energy used by all the people on Earth in a year. Year-to-year changes are influenced by events such as volcanic eruptions and recurring ocean-atmosphere patterns such as El Niño.",
         "links": []
       },
       {
@@ -59,6 +65,7 @@
         "fig_id": "sea-surface-temp_fig",
         "ind_desc": "Sea Surface Temperature",
         "ind_text": "Changes in sea surface temperature can alter marine ecosystems in several ways. For example, variations in ocean temperature can affect what species of plants, animals, and microbes are present in a location, alter migration and breeding patterns, threaten sensitive ocean life such as corals.  Increases in sea surface temperature have led to an increase in the amount of atmospheric water vapor over the oceans.3 This water vapor feeds weather systems that produce precipitation, increasing the risk of heavy rain and snow.",
+        "fig_desc": "Sea surface temperature has been consistently higher during the past three decades than at any other time since reliable observations began in 1880. Based on the historical record, increases in sea surface temperature have largely occurred over two key periods: between 1910 and 1940, and from about 1970 to the present. The shaded band shows the range of uncertainty in the data, based on the number of measurements collected and the precision of the methods used.",
         "links": []
       },
       {
@@ -66,6 +73,7 @@
         "fig_id": "sea-level_fig",
         "ind_desc": "Sea Level",
         "ind_text": "Changing sea levels can affect human activities in coastal areas. Rising sea level inundates low-lying wetlands and dry land, erodes shorelines, contributes to coastal flooding, and increases the flow of salt water into estuaries and nearby groundwater aquifers.",
+        "fig_desc": "After a period of approximately 2,000 years of little change (not shown here), global average sea level rose throughout the 20th century, and the rate of change has accelerated in recent years. When averaged over all of the world's oceans, absolute sea level has risen at an average rate of 0.06 inches per year from 1880 to 2013. Since 1993, however, average sea level has risen at a rate of 0.11 to 0.14 inches per year, roughly twice as fast as the long-term trend.",
         "links": []
       },
       {
@@ -73,6 +81,7 @@
         "fig_id": "ocean-acidity_fig",
         "ind_desc": "Ocean Acidity",
         "ind_text": "Carbon dioxide reacts with sea water to produce carbonic acid. The resulting increase in acidity (measured by lower pH values) changes the balance of minerals in the water. Declining pH can make it more difficult for some animals to thrive. This can lead to broader changes in the overall structure of ocean and coastal ecosystems, and can ultimately affect fish populations and the people who depend on them.",
+        "fig_desc": "The figure shows the relationship between changes in ocean carbon dioxide levels (left) and acidity (right). The up-and-down pattern shows the influence of seasonal variations. Measurements made over the last few decades have demonstrated that ocean carbon dioxide levels have risen in response to increased carbon dioxide in the atmosphere, leading to an increase in acidity (that is, a decrease in pH).",
         "links": []
       }
     ]
@@ -86,6 +95,7 @@
         "fig_id": "arctic-sea-ice_fig",
         "ind_desc": "Arctic Sea Ice",
         "ind_text": "The extent of area covered by Arctic sea ice is an important indicator of changes in global climate because warmer air and water temperatures are reducing the amount of sea ice present. Because sea ice is light-colored, it reflects more sunlight (solar energy) back to space than liquid water, thereby playing an important role in maintaining the Earth’s energy balance and helping to keep polar regions cool. As the amount of sea ice decreases, the Arctic region’s cooling effect is reduced, and this may initiate a “feedback loop” whereby ocean warming caused by more absorption of solar energy leads to an even greater loss of sea ice and further warming.",
+        "fig_desc": "September 2012 had the lowest sea ice extent ever recorded, 44 percent below the 1981–2010 average for that month. The September 2016 sea ice extent was more than 700,000 square miles less than the historical 1981–2010 average for that month a difference, more than two and a half times the size of Texas. March sea ice extent reached the lowest extent on record in 2015 and hit roughly the same low again in 2016, about 7 percent less than the 1981–2010 average. All months have shown a negative trend in sea ice extent over the past several decades. The largest year-to-year decreases have occurred in the summer and fall months.",
         "links": []
       },
       {
@@ -93,6 +103,7 @@
         "fig_id": "glaciers_fig",
         "ind_desc": "Glaciers",
         "ind_text": "Glaciers are important as an indicator of climate change because physical changes in glaciers—whether they are growing or shrinking, advancing or receding—provide visible evidence of changes in temperature and precipitation.",
+        "fig_desc": "All three U.S. benchmark glaciers have shown an overall decline in mass balance since the 1950s and 1960s and an accelerated rate of decline in recent years. Year-to-year trends vary, with some glaciers gaining mass in certain years (for example, Wolverine Glacier during the 1980s), but the measurements clearly indicate a loss of glacier mass over time.",
         "links": []
       },
       {
@@ -100,6 +111,7 @@
         "fig_id": "snow-cover_fig",
         "ind_desc": "Snow Cover",
         "ind_text": "As temperature and precipitation patterns change, so can the overall area covered by snow. it also exerts an influence on climate. Because snow is white, it absorbs only a small portion of the sunlight that hits it (10 to 20 percent in the case of fresh snow), and it reflects the rest back to space. More snow means more energy reflects back to space, resulting in cooling, while less snow cover means more energy is absorbed at the Earth’s surface, resulting in warming.",
+        "fig_desc": "Between 1972 and 2015, the average extent of North American snow cover decreased at a rate of about 3,300 square miles per year. Decreases in snow cover have largely occurred in spring and summer, whereas fall and winter snow cover have remained fairly steady over the time period studied. Spring and summer snow cover can have a particularly important influence on water supplies.",
         "links": []
       }
     ]
@@ -113,13 +125,15 @@
         "fig_id": "heat-illnesses_fig",
         "ind_desc": "Heat-Related Illnesses",
         "ind_text": "Heat-related illnesses can occur when a person is exposed to high temperatures, such that their body cannot cool itself sufficiently through sweating. Symptoms range from mild swelling, rashes, or cramps to potentially deadly heat exhaustion and heat stroke. Heat is the leading weather-related killer in the United States.",
+        "fig_desc": "From 2001 to 2010, 20 states recorded a total of about 28,000 heat-related hospitalizations. The resulting annual rates ranged from 1.1 cases per 100,000 people in 2004 to 2.5 cases per 100,000 people in 2006. The pattern largely matches the pattern in heat-related deaths during the same period. Considerable year-to-year variability makes it difficult to determine whether heat-related illnesses have increased or decreased to a meaningful degree since 2001.",
         "links": []
       },
       {
         "ind_id": 54,
         "fig_id": "lyme_fig",
         "ind_desc": "Lyme Disease",
-        "ind_text": "Lyme disease is a bacterial illness that can cause fever, fatigue, joint pain, and skin rash, as well as more serious joint and nervous system complications. Lyme disease is the most common vector-borne disease (that is, a disease transmitted by mosquitoes, ticks, or fleas) in the United States. Warming temperatures associated with climate change are projected to increase the range of suitable tick habitat and are therefore one of multiple factors driving the observed spread of Lyme disease.6 Because tick activity depends on temperatures being above a certain minimum, shorter winters could also extend the period when ticks are active each year, increasing the time that humans could be exposed to Lyme disease.",
+        "ind_text": "Lyme disease is a bacterial illness that can cause fever, fatigue, joint pain, and skin rash, as well as more serious joint and nervous system complications. Lyme disease is the most common vector-borne disease (that is, a disease transmitted by mosquitoes, ticks, or fleas) in the United States. Warming temperatures associated with climate change are projected to increase the range of suitable tick habitat and are therefore one of multiple factors driving the observed spread of Lyme disease. Because tick activity depends on temperatures being above a certain minimum, shorter winters could also extend the period when ticks are active each year, increasing the time that humans could be exposed to Lyme disease.",
+        "fig_desc": "The incidence of Lyme disease in the United States has approximately doubled since 1991, from 3.74 reported cases per 100,000 people to 7.95 reported cases per 100,000 people in 2014. The graph is based on cases that local and state health departments report to CDC’s national disease tracking system.",
         "links": []
       },
       {
@@ -127,6 +141,7 @@
         "fig_id": "growing_season_fig",
         "ind_desc": "Length of Growing Season",
         "ind_text": "The length of the growing season in any given region refers to the number of days when plant growth takes place. The growing season often determines which crops can be grown in an area, as some crops require long growing seasons, while others mature rapidly. Changes in the length of the growing season can have both positive and negative effects on the yield and prices of particular crops.",
+        "fig_desc": "The average length of the growing season in the contiguous 48 states has increased by nearly two weeks since the beginning of the 20th century. A particularly large and steady increase occurred over the last 30 years.",
         "links": []
       }
     ]
@@ -140,6 +155,7 @@
         "fig_id": "wildfires_fig",
         "ind_desc": "Wildfires",
         "ind_text": "Together, forests, shrubland, and grassland cover more than half of the land area in the United States.1 These ecosystems are important resources, both environmentally and economically. Although wildfires occur naturally and play a long-term role in the health of these ecosystems, climate change threatens to increase the frequency, extent, and severity of fires through increased temperatures and drought.",
+        "fig_desc": "The extent of area burned by wildfires each year appears to have increased since the 1980s. According to National Interagency Fire Center data, of the 10 years with the largest acreage burned, nine have occurred since 2000, including the peak year in 2015. This period coincides with many of the warmest years on record nationwide.",
         "links": []
       },
       {
@@ -147,6 +163,7 @@
         "fig_id": "bird-ranges_fig",
         "ind_desc": "Bird Wintering Ranges",
         "ind_text": "Some bird species can adapt to generally warmer temperatures by changing where they live—for example, by migrating farther north in the summer but not as far south in the winter, or by shifting inland as winter temperature extremes grow less severe. Non-migratory species might shift as well, expanding into newly suitable habitats while moving out of areas that become less suitable. Other types of birds might not adapt to changing conditions and could experience a population decline as a result.",
+        "fig_desc": "Among 305 widespread North American bird species, the average mid-December to early January center of abundance moved northward by more than 40 miles between 1966 and 2013. Trends in the center of abundance moving northward can be closely related to increasing winter temperatures. Some species have moved farther than others. A total of 48 species have moved northward by more than 200 miles.",
         "links": []
       },
       {
@@ -154,6 +171,7 @@
         "fig_id": "marine-species_fig",
         "ind_desc": "Marine Species Distribution",
         "ind_text": "Marine species represent a particularly good indicator of warming oceans because they are sensitive to climate and because they have been studied and tracked for many years. Fish are especially mobile, and they may shift their location more easily than species on land because they face fewer physical barriers.1 Also, many marine species, especially fish, do not have fixed nesting places or dwellings that might otherwise compel them to stay in one place.",
+        "fig_desc": "The average center of biomass for 105 marine fish and invertebrate species shifted northward by about 10 miles between 1982 and 2015. These species also moved an average of 20 feet deeper.",
         "links": []
       }
     ]

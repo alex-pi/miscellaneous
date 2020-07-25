@@ -2,7 +2,7 @@
 
 
 // TODO rename to graphEventHandler
-const nodeHandler = (function() {
+const nodeHandler = (function () {
   const nh = {};
   let svgGraph;
   let svgOffSets;
@@ -100,7 +100,7 @@ const nodeHandler = (function() {
     nodesel.attr('transform', d => `translate(${d.x}, ${d.y})`);
   };
 
-  nh.init = function(graph, dataHelper) {
+  nh.init = function (graph, dataHelper) {
     svgGraph = graph.config.svg;
     node_radius = graph.config.node_radius;
     linksel = graph.linksel;
@@ -117,7 +117,7 @@ const nodeHandler = (function() {
 
   };
 
-  nh.calculateLinkTooltipPosition = function() {
+  nh.calculateLinkTooltipPosition = function () {
     const pos = graphUtils.calculateElementPosition('#main-graph');
 
     svgOffSets = pos;
@@ -163,7 +163,7 @@ const nodeHandler = (function() {
   return nh;
 });
 
-const forceGraph = (function(config, eventHandler, dh) {
+const forceGraph = (function (config, eventHandler, dh) {
   const svg = config.svg;
   const [width, height] = [svg.attr('width'), svg.attr('height')];
   const [labelsx, labelsy] = [width - 160, 20]
@@ -171,7 +171,7 @@ const forceGraph = (function(config, eventHandler, dh) {
   const node_radius = config.node_radius;
   //const fg = {};
 
-  const init = function() {
+  const init = function () {
     const simulation = d3.forceSimulation()
       .force('link', d3.forceLink()
         .distance(50)
@@ -184,7 +184,7 @@ const forceGraph = (function(config, eventHandler, dh) {
     simulation.force('link').links(dh.links);
 
     const ggraph = svg.append('g');
-      //.attr('transform', `translate(0,0)`);
+    //.attr('transform', `translate(0,0)`);
 
     const linksel = ggraph
       .selectAll('.link') // difference between selecting .link vs line
@@ -224,7 +224,7 @@ const forceGraph = (function(config, eventHandler, dh) {
       svg: svg,
       x: labelsx,
       y: labelsy,
-      colors: function(d, i) {
+      colors: function (d, i) {
         return d3.schemeTableau10[d.cat_id - 1];
       },
       legendsData: dh.indsByCategory,
@@ -234,7 +234,7 @@ const forceGraph = (function(config, eventHandler, dh) {
       styleClass: 'glegends'
     });
 
-    const graphConfig =  {
+    const graphConfig = {
       ggraph: ggraph,
       linksel: linksel,
       nodesel: nodesel,
@@ -253,45 +253,54 @@ const forceGraph = (function(config, eventHandler, dh) {
 
 });
 
-const main = (function() {
+const main = (function () {
   const mo = {};
+  let indSection;
+  let indOverview;
+  let indFigText;
+  let indTitle;
 
   const hooks = {
     clickedNode: function (selectedNode, previousNode) {
-        console.log('hook!');
+      console.log('hook!');
 
-        if (!_.isEmpty(previousNode)) {
-          $('#indSection').fadeTo('fast', 0);
-          lineGraphHelper.clean();
-        }
-        const figId = selectedNode.d.fig_id;
-        if(_.isNil(figId)) {
-          console.log(`fig_id not found for node: ${selectedNode.d.ind_desc}`);
-          return;
-        }
-        dataHelper.loadData(figId, `data/${figId}.csv`)
-          .then( data => {
-            const svg = lineGraphHelper.draw('ind_fig', figId, data);
-            const indDetails = dataHelper.find('fig_id', figId);
-            $('#ind_overview').html(`<q>${indDetails.ind_text}</q>`);
-            $('#indSection').fadeTo('medium', 1);
-            //$('#indSection').fadeToggle(1500);
-            //setTimeout( () => svg.selectAll('*').remove(), 3000);
-          });
+      if (!_.isEmpty(previousNode)) {
+        indSection.fadeTo('fast', 0);
+        lineGraphHelper.clean();
+      } else $('#ind_section').show();
+
+      const figId = selectedNode.d.fig_id;
+      if (_.isNil(figId)) {
+        console.log(`fig_id not found for node: ${selectedNode.d.ind_desc}`);
+        return;
+      }
+      dataHelper.loadData(figId, `data/${figId}.csv`)
+        .then(data => {
+          const svg = lineGraphHelper.draw('ind_fig', figId, data);
+          const indDetails = dataHelper.find('fig_id', figId);
+          indTitle.text(indDetails.ind_desc);
+          indOverview.html(`<q>${indDetails.ind_text}</q>`);
+          indFigText.html(`<q>${indDetails.fig_desc}</q>`);
+          indSection.fadeTo('medium', 1);
+        });
     }
   };
 
-  mo.init = async function() {
-     mo.graphData = await dataHelper.init();
-     mo.svgForceGraph = d3.select('#main-graph');
-     mo.geh = nodeHandler();
-     mo.fg = forceGraph({
+  mo.init = async function () {
+    indSection = $('#ind_section');
+    indOverview = $('#ind_overview');
+    indFigText = $('#ind_fig_text');
+    indTitle = $('#ind_title');
+    mo.graphData = await dataHelper.init();
+    mo.svgForceGraph = d3.select('#main-graph');
+    mo.geh = nodeHandler();
+    mo.fg = forceGraph({
       svg: mo.svgForceGraph,
       node_radius: 13,
       hooks: hooks
     }, mo.geh, mo.graphData);
 
-    $(window).on('resize', function(){
+    $(window).on('resize', function () {
       mo.geh.calculateLinkTooltipPosition();
     });
   };

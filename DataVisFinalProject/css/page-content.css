@@ -50,7 +50,7 @@ p.indtext {
   text-justify: inter-word;
 }
 
-#indSection > div{
+#ind_section > div{
   margin-left: 25px;
 }
 
@@ -63,7 +63,7 @@ p.indoverview {
 p.indfigtext {
   width: 500px;
   font-size: 12px;
-  /*quotes: "«" "»";*/
+  quotes: "«" "»";
   /*font-style: italic;*/
 }
 
@@ -178,6 +178,11 @@ line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
   color: #e7e7dc;
   font-size: 12px;
   font-weight: bold;
+  font-family: sans-serif;
+}
+.indAnnotations {
+  fill: #635F5D;
+  font-size: 12px;
   font-family: sans-serif;
 }
 /* Graph styles */
