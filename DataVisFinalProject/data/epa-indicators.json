@@ -5,6 +5,8 @@
     "indicators": [
       {
         "ind_id": 12,
+        "fig_id": "global-ghg-emissions",
+        "fig_type": "stackedBars",
         "ind_desc": "Global Greenhouse Gas Emissions",
         "ind_text": "Every country around the world emits greenhouse gases into the atmosphere, meaning the root cause of climate change is truly global in scope. Some countries produce far more greenhouse gases than others, and several factors—such as economic activity (including the composition and efficiency of the economy), population, income level, land use, and climatic conditions—can influence a country’s emissions levels.",
         "fig_desc": "In 2010, estimated worldwide emissions from human activities totaled nearly 46 billion metric tons of greenhouse gases, expressed as carbon dioxide equivalents. This represents a 35 percent increase from 1990. Energy production and use (including fuels used by vehicles) represent the largest source of greenhouse gas emissions worldwide (about 71 percent of the total in 2010), followed by agriculture (13 percent in 2010).",
@@ -26,6 +28,8 @@
     "indicators": [
       {
         "ind_id": 21,
+        "fig_id": "temperature_fig",
+        "fig_type": "bars",
         "ind_desc": "U.S. and Global Temperature",
         "ind_text": "Temperature is a fundamental measurement for describing the climate, and the temperature in particular places can have wide-ranging effects on human life and ecosystems. For example, increases in air temperature can lead to more intense heat waves, which can cause illness and death, especially in vulnerable populations. Annual and seasonal temperature patterns also determine the types of animals and plants that can survive in particular locations. Changes in temperature can disrupt a wide range of natural processes, particularly if these changes occur more quickly than plant and animal species can adapt.",
         "fig_desc": "Worldwide, 2015 was the warmest year on record and 2006–2015 was the warmest decade on record since thermometer-based observations began. Global average surface temperature has risen at an average rate of 0.15°F per decade since 1901, similar to the rate of warming within the contiguous 48 states. Since the late 1970s, however, the United States has warmed faster than the global rate.",
@@ -33,6 +37,8 @@
       },
       {
         "ind_id": 24,
+        "fig_id": "heavy-precip_fig",
+        "fig_type": "bars",
         "ind_desc": "Heavy Precipitation",
         "ind_text": "Climate change can affect the intensity and frequency of precipitation. Warmer oceans increase the amount of water that evaporates into the air. When more moisture-laden air moves over land or converges into a storm system, it can produce more intense precipitation—for example, heavier rain and snow storms.",
         "fig_desc": "This figure shows the percentage of the land area of the contiguous 48 states where a much greater than normal portion of total annual precipitation has come from extreme single-day precipitation events. The bars represent individual years, while the line is a nine-year weighted average. Over the entire period from 1910 to 2015, the portion of the country experiencing extreme single-day precipitation events increased at a rate of about half a percentage point per decade.",

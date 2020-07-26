@@ -259,6 +259,7 @@ const main = (function () {
   let indOverview;
   let indFigText;
   let indTitle;
+  let svg;
 
   const hooks = {
     clickedNode: function (selectedNode, previousNode) {
@@ -266,17 +267,23 @@ const main = (function () {
 
       if (!_.isEmpty(previousNode)) {
         indSection.fadeTo('fast', 0);
-        lineGraphHelper.clean();
+        graphUtils.clean(svg);
       } else $('#ind_section').show();
 
       const figId = selectedNode.d.fig_id;
+      const figType = selectedNode.d.fig_type;
       if (_.isNil(figId)) {
         console.log(`fig_id not found for node: ${selectedNode.d.ind_desc}`);
         return;
       }
       dataHelper.loadData(figId, `data/${figId}.csv`)
         .then(data => {
-          const svg = lineGraphHelper.draw('ind_fig', figId, data);
+          if('stackedBars' == figType)
+            svg = stackBarsGraphHelper.draw('ind_fig', figId, data);
+          else if('bars' == figType)
+            svg = barsGraphHelper.draw('ind_fig', figId, data);
+          else
+            svg = lineGraphHelper.draw('ind_fig', figId, data);
           const indDetails = dataHelper.find('fig_id', figId);
           indTitle.text(indDetails.ind_desc);
           indOverview.html(`<q>${indDetails.ind_text}</q>`);

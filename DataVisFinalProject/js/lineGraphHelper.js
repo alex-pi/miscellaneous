@@ -1,65 +1,6 @@
 const lineGraphHelper = (function () {
   const lgh = {};
 
-  const applyIf = function(props) {
-    const d3Chain = this;
-    const collectionCheck = (c) => !_.isEmpty(c);
-    const valueCheck = (v) => !_.isNil(v);
-
-    _.forEach(props, (v, k) => {
-      const check = (v) => {
-        if (_.isArray(v))
-          return collectionCheck;
-        else
-          return valueCheck;
-      };
-      if (check(v))
-        d3Chain[k](v);
-    });
-  };
-
-  const createXAxis = function(g, conf) {
-    var xAxisG = g.append('g')
-      .attr('transform', `translate(0, ${conf.innerHeight})`);
-
-    xAxisG.append('text')
-      .attr('class', 'axis-label')
-      .attr('x', conf.innerWidth / 2)
-      .attr('y', 40)
-      .text(conf.xAxisTitle);
-
-    return xAxisG;
-  };
-
-  const createYAxis = function(g, conf, title) {
-    const yAxisG = g.append('g');
-
-    yAxisG.append('text')
-      .attr('class', 'axis-label')
-      .attr('x', -conf.innerHeight / 2)
-      .attr('y', () => title.yShift || -40)
-      .attr('transform', `rotate(-90)`)
-      .style('text-anchor', 'middle')
-      .text(() => title.text || title);
-
-    return yAxisG
-  };
-
-  const createSecondYAxis = function(g, conf, title) {
-    const yAxisG2 = g.append('g')
-      .attr('transform', `translate(${conf.innerWidth}, 0)`);
-
-    yAxisG2.append('text')
-      .attr('class', 'axis-label')
-      .attr('x', conf.innerHeight / 2)
-      .attr('y', -50)
-      .attr('transform', `rotate(90)`)
-      .style('text-anchor', 'middle')
-      .text(title);
-
-    return yAxisG2;
-  };
-
   const prepareYSeries = function(conf, data) {
     conf.ySeriesNames = _.slice(data.columns, 1);
 
@@ -150,9 +91,9 @@ const lineGraphHelper = (function () {
       .attr("transform",
         `translate(${margin.left}, ${margin.top})`);
 
-    const xAxisG = createXAxis(viewPort, lgc);
+    const xAxisG = graphUtils.createXAxis(viewPort, lgc);
 
-    const yAxisG = createYAxis(viewPort, lgc, ySeries[0].axisTitle);
+    const yAxisG = graphUtils.createYAxis(viewPort, lgc, ySeries[0].axisTitle);
 
     _.forEach(ySeries, (s) => {
       s.scale = d3.scaleLinear()
@@ -162,7 +103,7 @@ const lineGraphHelper = (function () {
 
     if(lgc.separateScales) {
       //TODO correlate which series correspond to the second yAxis
-      const yAxisG2 = createSecondYAxis(viewPort, lgc, ySeries[1].axisTitle);
+      const yAxisG2 = graphUtils.createSecondYAxis(viewPort, lgc, ySeries[1].axisTitle);
       const yAxis2 = d3.axisRight()
         .scale(ySeries[1].scale)
         .tickPadding(15);
@@ -180,13 +121,13 @@ const lineGraphHelper = (function () {
       .domain(lgc.xDomain)
       .range([0, lgc.innerWidth]);
 
-    var xAxis = d3.axisBottom()
+    const xAxis = d3.axisBottom()
       .scale(xScale)
       .tickPadding(15)
       .tickFormat(d3.format(""))
       .tickSize(-lgc.innerHeight);
 
-    applyIf.apply(xAxis, [{'tickValues': lgc.xTickValues}]);
+    graphUtils.applyIf.apply(xAxis, [{'tickValues': lgc.xTickValues}]);
 
     xAxisG.call(xAxis);
 
@@ -262,12 +203,7 @@ const lineGraphHelper = (function () {
 
     lgh.svg = svg;
     return svg;
-  }
-
-  lgh.clean = function() {
-    if(!_.isNil(lgh.svg))
-      lgh.svg.selectAll('*').remove();
-  }
+  };
 
   return lgh;
 })();

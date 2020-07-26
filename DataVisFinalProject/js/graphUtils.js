@@ -3,6 +3,48 @@ const graphUtils = (function(){
 
   const utils = {};
 
+  utils.createXAxis = function(g, conf) {
+    var xAxisG = g.append('g')
+      .attr('transform', `translate(0, ${conf.innerHeight})`);
+
+    xAxisG.append('text')
+      .attr('class', 'axis-label')
+      .attr('x', conf.innerWidth / 2)
+      .attr('y', 40)
+      .text(conf.xAxisTitle);
+
+    return xAxisG;
+  };
+
+  utils.createYAxis = function(g, conf, title) {
+    const yAxisG = g.append('g');
+
+    yAxisG.append('text')
+      .attr('class', 'axis-label')
+      .attr('x', -conf.innerHeight / 2)
+      .attr('y', () => title.yShift || -40)
+      .attr('transform', `rotate(-90)`)
+      .style('text-anchor', 'middle')
+      .text(() => title.text || title);
+
+    return yAxisG
+  };
+
+  utils.createSecondYAxis = function(g, conf, title) {
+    const yAxisG2 = g.append('g')
+      .attr('transform', `translate(${conf.innerWidth}, 0)`);
+
+    yAxisG2.append('text')
+      .attr('class', 'axis-label')
+      .attr('x', conf.innerHeight / 2)
+      .attr('y', -50)
+      .attr('transform', `rotate(90)`)
+      .style('text-anchor', 'middle')
+      .text(title);
+
+    return yAxisG2;
+  }
+
   utils.addAnnotation = function(conf) {
 
     const annXOffset = (conf.xOffSet || 0) + conf.x;
@@ -103,6 +145,28 @@ const graphUtils = (function(){
       left: offsetleft,
       top: offsettop
     }
+  };
+
+  utils.applyIf = function(props) {
+    const d3Chain = this;
+    const collectionCheck = (c) => !_.isEmpty(c);
+    const valueCheck = (v) => !_.isNil(v);
+
+    _.forEach(props, (v, k) => {
+      const check = (v) => {
+        if (_.isArray(v))
+          return collectionCheck;
+        else
+          return valueCheck;
+      };
+      if (check(v))
+        d3Chain[k](v);
+    });
+  };
+
+  utils.clean = function(svg) {
+    if(!_.isNil(svg))
+      svg.selectAll('*').remove();
   };
 
   return utils;

@@ -152,6 +152,9 @@ line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
 .tick line {
   stroke: #C0C0BB;
 }
+path.domain {
+  stroke: #C0C0BB;
+}
 .tick text {
   fill: #8E8883;
   font-size: 8pt;
@@ -184,6 +187,10 @@ line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
   fill: #635F5D;
   font-size: 12px;
   font-family: sans-serif;
+}
+.simpleBar{
+  fill: #30696c;
+  opacity: 0.7;
 }
 /* Graph styles */
 
