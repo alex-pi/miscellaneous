@@ -482,7 +482,7 @@ const lineGraphConfigs = (function () {
   configs['temperature_fig'] = (function () {
     const [width, height] = [630, 350];
     //const xDomain = [1910, 2020];
-    const yDomain = [-3, 4];
+    const yDomain = [-2, 2];
     const gc = {
       width: width,
       height: height,
@@ -491,7 +491,8 @@ const lineGraphConfigs = (function () {
       yAxisTitle: 'Temperature anomaly (F)',
       yDomain: yDomain,
       yTickValues: _.range(-3, 5),
-      xTickValues: _.range(1900, 2020, 10)
+      xTickValues: _.range(1900, 2020, 10),
+      baseDataPoint: 0
     }
     return gc;
   })();

@@ -96,7 +96,7 @@ h2 {
 
 /* force graph style */
 line.link {stroke: gray; cursor: pointer; stroke-width: 4;}
-line.linkh {stroke: yellow; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
+line.linkh {stroke: deepskyblue; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
 .node circle {stroke: white; cursor: pointer;}
 
 .glegends {
@@ -188,8 +188,16 @@ path.domain {
   font-size: 12px;
   font-family: sans-serif;
 }
-.simpleBar{
+.neutralBar{
   fill: #30696c;
+  opacity: 0.7;
+}
+.blueBar{
+  fill: #204fa8;
+  opacity: 0.7;
+}
+.redBar{
+  fill: #992c36;
   opacity: 0.7;
 }
 /* Graph styles */

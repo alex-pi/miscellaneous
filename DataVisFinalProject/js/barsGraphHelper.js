@@ -60,42 +60,30 @@ const barsGraphHelper = (function () {
 
     yAxisG.call(yAxis);
 
+    let rectY = d => yScale(d[gc.yFieldName]);
+    let rectH = d => gc.innerHeight - yScale(d[gc.yFieldName]);
+
+    if(!_.isNil(gc.baseDataPoint)) {
+      const baseYPoint = yScale(gc.baseDataPoint);
+      rectY = d => d[gc.yFieldName] <= 0 ? baseYPoint:yScale(d[gc.yFieldName]);
+      rectH = d => Math.abs(yScale(d[gc.yFieldName]) - baseYPoint);
+    }
+
     viewPort.selectAll('rect')
       .data(data).enter()
       .append('rect')
-      .attr('class', 'simpleBar')
-        .attr('x', (d, i) => {
-          let v = xScale(d[gc.xFieldName])
-          return v;
-        })
-        .attr('y', gc.innerHeight - 1)
-        .attr('width', xScale.bandwidth())
-        .attr('height', 1)
-        /*.on('mouseover', (d, i) => {
-          tooltip
-            .style('left', d3.event.pageX - 50 + 'px')
-            .style('top', d3.event.pageY - 70 + 'px')
-            .style('display', 'inline-block')
-            .html(`${d['Year']} is ${d['Index value']}`);
-        })
-            .on('mouseout', () => tooltip.style('display', 'none'))*/
-        .transition().duration(3000).delay(1000)
-        .attr('y', (d, i) => {
-          let v = yScale(d[gc.yFieldName]);
-          debugger;
-          return v;
-        })
-        .attr('height', (d, i) => gc.innerHeight - yScale(d[gc.yFieldName]));
-
-
-    /*viewPort.append('g')
-      //.attr('transform', `translate(${gd.ox}, ${gd.oy})`)
-      //.call(d3.axisLeft(yscale));
-      .call(d3.axisLeft(yScale));
-
-    viewPort.append('g')
-      .attr('transform', `translate(0, ${gc.innerHeight})`)
-      .call(d3.axisBottom(xScale));*/
+      .attr('class', d => {
+        if(!_.isNil(gc.baseDataPoint))
+          return d[gc.yFieldName] <= 0? 'blueBar':'redBar';
+        return 'neutralBar'
+      })
+      .attr('x', (d, i) => xScale(d[gc.xFieldName])) //
+      .attr('width', xScale.bandwidth())
+      .attr('y', yScale(0))
+      .attr('height', 0)
+      .transition().duration(3000).delay(1000)
+      .attr('y', rectY)
+      .attr('height', rectH);
 
     return svg;
   };
