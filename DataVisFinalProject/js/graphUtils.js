@@ -164,6 +164,14 @@ const graphUtils = (function(){
     });
   };
 
+  utils.show = function(elem) {
+    elem.style.display = 'flex';
+  }
+
+  utils.hide = function(elem) {
+    elem.style.display = 'none';
+  }
+
   utils.clean = function(svg) {
     if(!_.isNil(svg))
       svg.selectAll('*').remove();

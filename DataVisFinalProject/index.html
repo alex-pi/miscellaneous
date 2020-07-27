@@ -12,7 +12,6 @@
   <meta property="og:url" content="">
   <meta property="og:image" content="">
   <script src="https://d3js.org/d3.v5.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/lodash.min.js"></script>
 
   <link rel="manifest" href="site.webmanifest">
@@ -31,16 +30,10 @@
   <script src="js/barsGraphHelper.js"></script>
   <script src="js/main.js"></script>
   <script src="js/lineGraphHelper.js"></script>
-  <script>
-    $(document).ready(function() {
 
-      $('#ind_section').hide();
-      main.init();
-    });
-  </script>
 </head>
 
-<body>
+<body id="body_page">
 
 <div id="main_section" class="main container">
   <h1>Climate Change Indicators in the United States</h1>
@@ -70,7 +63,11 @@
     <p id="text"></p>
   </div>
 </div>
-
+<script>
+  (function(){
+    main.init();
+  })();
+</script>
 </body>
 
 </html>

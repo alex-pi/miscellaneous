@@ -259,6 +259,7 @@ const main = (function () {
   let indOverview;
   let indFigText;
   let indTitle;
+  let bodyPage;
   let svg;
 
   const hooks = {
@@ -266,9 +267,9 @@ const main = (function () {
       console.log('hook!');
 
       if (!_.isEmpty(previousNode)) {
-        indSection.fadeTo('fast', 0);
+        //indSection.fadeTo('fast', 0);
         graphUtils.clean(svg);
-      } else $('#ind_section').show();
+      } else graphUtils.show(indSection);
 
       const figId = selectedNode.d.fig_id;
       const figType = selectedNode.d.fig_type;
@@ -285,19 +286,21 @@ const main = (function () {
           else
             svg = lineGraphHelper.draw('ind_fig', figId, data);
           const indDetails = dataHelper.find('fig_id', figId);
-          indTitle.text(indDetails.ind_desc);
-          indOverview.html(`<q>${indDetails.ind_text}</q>`);
-          indFigText.html(`<q>${indDetails.fig_desc}</q>`);
-          indSection.fadeTo('medium', 1);
+          indTitle.innerHTML = indDetails.ind_desc;
+          indOverview.innerHTML = `<q>${indDetails.ind_text}</q>`;
+          indFigText.innerHTML = `<q>${indDetails.fig_desc}</q>`;
+          //indSection.fadeTo('medium', 1);
         });
     }
   };
 
   mo.init = async function () {
-    indSection = $('#ind_section');
-    indOverview = $('#ind_overview');
-    indFigText = $('#ind_fig_text');
-    indTitle = $('#ind_title');
+    indSection = document.getElementById('ind_section');
+    graphUtils.hide(indSection);
+    indOverview = document.getElementById('ind_overview');
+    indFigText = document.getElementById('ind_fig_text');
+    indTitle = document.getElementById('ind_title');
+    bodyPage = document.getElementById('body_page');
     mo.graphData = await dataHelper.init();
     mo.svgForceGraph = d3.select('#main-graph');
     mo.geh = nodeHandler();
@@ -307,9 +310,7 @@ const main = (function () {
       hooks: hooks
     }, mo.geh, mo.graphData);
 
-    $(window).on('resize', function () {
-      mo.geh.calculateLinkTooltipPosition();
-    });
+    bodyPage.onresize = mo.geh.calculateLinkTooltipPosition;
   };
 
   return mo;
