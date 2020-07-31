@@ -96,13 +96,21 @@ h2 {
 
 /* force graph style */
 line.link {stroke: gray; cursor: pointer; stroke-width: 4;}
-line.linkh {stroke: deepskyblue; cursor: pointer; stroke-width: 4.5; opacity: 0.52}
+line.linkh {stroke: #3695ad; cursor: pointer; stroke-width: 4; opacity: 0.42}
 .node circle {stroke: white; cursor: pointer;}
+circle.affordOn {stroke: #4fad62; stroke-width: 3;}
+circle.affordOff {stroke: white; stroke-width: 1;}
 
 .glegends {
   /*font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;*/
   fill: #464a52;
   font-size: 14px
+}
+
+.glegends-small {
+  /*font-family: "Source Serif Pro",Iowan Old Style,Apple Garamond,Palatino Linotype;*/
+  fill: #464a52;
+  font-size: 12px
 }
 
 .toolTip {
@@ -180,16 +188,29 @@ path.domain {
   fill: #464a52;
   color: #e7e7dc;
   font-size: 12px;
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-family: sans-serif;
 }
 .indAnnotations {
-  fill: #635F5D;
+  fill: #637b95;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.indAnnotationsSmall {
+  fill: #637b95;
   font-size: 12px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.indBadAnnotationsSmall {
+  fill: #f16a72;
+  font-size: 12px;
+  font-weight: bold;
   font-family: sans-serif;
 }
 .neutralBar{
-  fill: #30696c;
+  fill: #618284;
   opacity: 0.7;
 }
 .blueBar{

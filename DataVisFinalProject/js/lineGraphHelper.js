@@ -19,21 +19,6 @@ const lineGraphHelper = (function () {
     });
   };
 
-  const addAnnotations = function(g, conf, series) {
-    if(_.isNil(conf.annotations)) return;
-
-    _.forEach(conf.annotations, (an, i) => {
-      let dataPointCondition = s => +an.xDataPoint == s.xval;
-      if(_.isFunction(an.xDataPoint))
-        dataPointCondition = an.xDataPoint;
-      const point = _.find(series[an.seriesIndex || i].values, dataPointCondition)
-      an.x = point.xg;
-      an.y = point.yg;
-      an.g = g;
-      graphUtils.addAnnotation(an);
-    });
-  };
-
   const addLegends = function(svg, conf) {
     if(_.isNil(conf.legends)) return;
     return graphUtils.addLegends({
@@ -141,7 +126,7 @@ const lineGraphHelper = (function () {
     //applyIf.apply(yAxis, [{'tickValues': lgc.yTickValues}]);
     yAxisG.call(yAxis);
 
-    if (baseLine.point != undefined) {
+    /*if (baseLine.point != undefined) {
       yAxisG.selectAll("g")
         .filter(d => d == baseLine.point)
         .attr('class', 'baseLine');
@@ -155,7 +140,9 @@ const lineGraphHelper = (function () {
         .attr('x', baseLine.xy[0])
         .attr('y', baseLine.xy[1])
         .text(baseLine.text);
-    }
+    }*/
+
+    graphUtils.addBaseLine(viewPort, yAxisG, baseLine);
 
     const series = _.reduce(data, (memo, row) => {
       //debugger;
@@ -197,8 +184,9 @@ const lineGraphHelper = (function () {
         //.style("stroke-width", 3)
         //.style("fill", "none");
 
-    addLegends(svg, lgc); //TODO I think I should use the viewPort not the svg
-    addAnnotations(viewPort, lgc, series);
+    addLegends(svg, lgc); //TODO I should use the viewPort not the svg
+    graphUtils.addAnnotations(viewPort, lgc, series);
+    graphUtils.addFreeTexts(viewPort, lgc);
     console.log(series);
 
     lgh.svg = svg;

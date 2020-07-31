@@ -42,7 +42,22 @@ const lineGraphConfigs = (function () {
         point: 0,
         text: "Long-term average",
         xy: [20, height / 2 - 43],
-      }
+      },
+      annotations: [{
+        text: point => `${point.yval.toFixed(2)} days deviation from average`,
+        xDataPoint: 2015,
+        yOffSet: 170,
+        xOffSet: -120,
+        seriesIndex: 0,
+        markPoint: true
+      }, {
+        text: point => `A steady increase started in ${point.xval}`,
+        xDataPoint: 1980,
+        yOffSet: -80,
+        xOffSet: -40,
+        seriesIndex: 0,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -87,10 +102,35 @@ const lineGraphConfigs = (function () {
       xDomain: xDomain,
       xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
       ySeries: [{
-        //name: 'Incidence Rate',
         domain: yDomain,
         styleClass: '',
         axisTitle: 'Incidents (cases per 100,000 people)'
+      }],
+      annotations: [{
+        text: '3.74 reported cases',
+        xDataPoint: 1991,
+        yOffSet: 55,
+        xOffSet: 80,
+        seriesIndex: 0,
+        markPoint: true
+      },{
+        text: '7.95 reported cases',
+        xDataPoint: 2014,
+        yOffSet: -58,
+        xOffSet: -55,
+        seriesIndex: 0,
+        markPoint: true
+      }],
+      freeTexts: [{
+        x: 120,
+        y: 20,
+        text: 'Lyme disease in the United States',
+        styleClass: 'indAnnotationsSmall'
+      },{
+        x: 120,
+        y: 35,
+        text: 'has approximately doubled since 1991',
+        styleClass: 'indAnnotationsSmall'
       }]
     };
 
@@ -158,9 +198,24 @@ const lineGraphConfigs = (function () {
       xDomain: xDomain,
       legends: {
         x: width - 180,
-        y: 50
+        y: 240,
+        bg: {
+          width: 92,
+          height: 37
+        }
       },
-      xTickValues: [1985, 1990, 1995, 2000, 2005, 2010, 2015]
+      xTickValues: [1985, 1990, 1995, 2000, 2005, 2010, 2015],
+      freeTexts: [{
+        x: 120,
+        y: 20,
+        text: 'As the disolved CO2 increases',
+        styleClass: 'indAnnotationsSmall'
+      },{
+        x: 120,
+        y: 35,
+        text: 'the pH decreases.',
+        styleClass: 'indAnnotationsSmall'
+      }]
     };
 
     return gc;
@@ -250,10 +305,16 @@ const lineGraphConfigs = (function () {
       annotations: [{
         text: 'Beginning of the industrial era',
         xDataPoint: (dp) => dp.xval >= 1760 && !_.isNil(dp.yval),
-        yOffSet: -40,
-        xOffSet: -60,
+        yOffSet: -86,
+        xOffSet: -80,
         seriesIndex: 1,
         markPoint: true
+      }],
+      freeTexts: [{
+        x: 200,
+        y: 80,
+        text: 'Each colored line are measures from a different ice core.',
+        styleClass: 'indAnnotationsSmall'
       }]
     };
 
@@ -272,7 +333,28 @@ const lineGraphConfigs = (function () {
       xAxisTitle: 'Year',
       yAxisTitle: 'Hospitalizations per 100,000 people',
       xDomain: xDomain,
-      yDomain: yDomain
+      yDomain: yDomain,
+      freeTexts: [{
+        x: 270,
+        y: 255,
+        text: 'Pattern matches the data for heat related deaths',
+        styleClass: 'indAnnotationsSmall'
+      }],
+      annotations: [{
+        text: '2.5 cases',
+        xDataPoint: 2006,
+        yOffSet: -30,
+        xOffSet: -80,
+        seriesIndex: 0,
+        markPoint: true
+      },{
+        text: '1.1 cases',
+        xDataPoint: 2004,
+        yOffSet: 40,
+        xOffSet: 10,
+        seriesIndex: 0,
+        markPoint: true
+      }]
       //xTickValues: _.range(xDomain[0], xDomain[1] + 2, 2)
     };
 
@@ -391,24 +473,32 @@ const lineGraphConfigs = (function () {
       xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
       annotations: [
         {
-          text: 'Winter',
+          text: 'Snow cover in Winter has been steady',
           xDataPoint: 1990,
-          yOffSet: -20
+          yOffSet: -20,
+          xOffSet: 10,
+          styleClass: 'indAnnotationsSmall'
         },
         {
-          text: 'Spring',
+          text: 'Snow cover in Spring has decreased',
           xDataPoint: 1990,
-          yOffSet: -20
+          yOffSet: -30,
+          xOffSet: 10,
+          styleClass: 'indBadAnnotationsSmall'
         },
         {
-          text: 'Fall',
+          text: 'Snow cover in Summer has decrease',
           xDataPoint: 1990,
-          yOffSet: -20
+          yOffSet: -30,
+          xOffSet: 10,
+          styleClass: 'indBadAnnotationsSmall'
         },
         {
-          text: 'Summer',
+          text: 'Snow cover in Fall has been steady',
           xDataPoint: 1990,
-          yOffSet: -28
+          yOffSet: -34,
+          xOffSet: 10,
+          styleClass: 'indAnnotationsSmall'
         }
       ]
     };
@@ -430,9 +520,21 @@ const lineGraphConfigs = (function () {
       yDomain: yDomain,
       xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
       legends: {
-        x: width / 4,
-        y: 55
-      }
+        x: width / 2,
+        y: 280,
+        bg: {
+          width: 196,
+          height: 17
+        }
+      },
+      annotations: [{
+        text: 'Peaks coincide with warmest years on record',
+        xDataPoint: 2006,
+        yOffSet: -30,
+        xOffSet: -80,
+        seriesIndex: 0,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -454,7 +556,13 @@ const lineGraphConfigs = (function () {
           width: 190,
           height: 120
         }
-      }
+      },
+      freeTexts: [{
+        x: 150,
+        y: 40,
+        text: '35% percent increase from 1990 to 2010',
+        styleClass: 'indAnnotationsSmall'
+      }]
       //xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5)
     }
     return gc;
@@ -492,7 +600,22 @@ const lineGraphConfigs = (function () {
       yDomain: yDomain,
       yTickValues: _.range(-3, 5),
       xTickValues: _.range(1900, 2020, 10),
-      baseDataPoint: 0
+      baseDataPoint: 0,
+      baseLine: {
+        //point: 0,
+        text: "1901–2000 average as a baseline",
+        xy: [20, height / 2 - 43],
+      }, freeTexts: [{
+        x: 120,
+        y: 40,
+        text: 'Each bar represents the deviation',
+        styleClass: 'indAnnotationsSmall'
+      },{
+        x: 120,
+        y: 55,
+        text: 'from the baseline for a particular year.',
+        styleClass: 'indAnnotationsSmall'
+      }]
     }
     return gc;
   })();

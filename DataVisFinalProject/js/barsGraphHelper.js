@@ -24,8 +24,6 @@ const barsGraphHelper = (function () {
       .attr("transform",
         `translate(${margin.left}, ${margin.top})`);
 
-    //const tooltip = d3.select("body").append("div").attr("class", "toolTip");
-
     const xScale = d3.scaleBand()
       .domain(data.map(d => d[gc.xFieldName]))
       //.domain(gc.xDomain)
@@ -60,6 +58,8 @@ const barsGraphHelper = (function () {
 
     yAxisG.call(yAxis);
 
+    graphUtils.addBaseLine(viewPort, yAxisG, gc.baseLine);
+
     let rectY = d => yScale(d[gc.yFieldName]);
     let rectH = d => gc.innerHeight - yScale(d[gc.yFieldName]);
 
@@ -69,21 +69,27 @@ const barsGraphHelper = (function () {
       rectH = d => Math.abs(yScale(d[gc.yFieldName]) - baseYPoint);
     }
 
-    viewPort.selectAll('rect')
+    const aaa = viewPort.selectAll('rect')
       .data(data).enter()
       .append('rect')
       .attr('class', d => {
         if(!_.isNil(gc.baseDataPoint))
           return d[gc.yFieldName] <= 0? 'blueBar':'redBar';
-        return 'neutralBar'
+        return 'neutralBar';
       })
-      .attr('x', (d, i) => xScale(d[gc.xFieldName])) //
+      .attr('x', (d, i) => xScale(d[gc.xFieldName]))
       .attr('width', xScale.bandwidth())
       .attr('y', yScale(0))
       .attr('height', 0)
-      .transition().duration(3000).delay(1000)
+      .transition().duration(3000).delay(300)
       .attr('y', rectY)
       .attr('height', rectH);
+
+    viewPort.selectAll('rect')
+      .append("title")
+        .text(d => `Year: ${d[gc.xFieldName]}, Average: ${d[gc.yFieldName]}`);
+
+    graphUtils.addFreeTexts(viewPort, gc);
 
     return svg;
   };

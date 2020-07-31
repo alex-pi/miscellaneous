@@ -45,12 +45,10 @@ const stackBarsGraphHelper = (function () {
       .domain([0, d3.max(series, d => d3.max(d, d => d[1]))])
       .rangeRound([gc.innerHeight, margin.top]);
 
-
     gc.colorScheme = d3.schemeSpectral[series.length];
 
     const color = d3.scaleOrdinal()
       .domain(series.map(d => d.key))
-      //.range(series.map((d) => d3.interpolateTurbo(d.index/10)))
       .range(gc.colorScheme);
 
     const xAxisG = graphUtils.createXAxis(viewPort, gc);
@@ -61,19 +59,9 @@ const stackBarsGraphHelper = (function () {
 
     const yAxis = d3.axisLeft(yScale).tickSize(-gc.innerWidth);
 
-    /*const yAxis = g => g
-      //.attr("transform", `translate(0,0)`)
-      .call(d3.axisLeft(yScale).tickSize(-gc.innerWidth))*/
-
     xAxisG.call(xAxis);
 
     yAxisG.call(yAxis);
-
-    /*viewPort.append("g")
-      .call(xAxis);
-
-    viewPort.append("g")
-      .call(yAxis);*/
 
     viewPort.append("g")
       .selectAll("g")
@@ -104,6 +92,8 @@ const stackBarsGraphHelper = (function () {
       styleClass: 'indlegends',
       bg: gc.legends.bg
     });
+
+    graphUtils.addFreeTexts(viewPort, gc);
 
     return svg;
 

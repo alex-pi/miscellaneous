@@ -55,7 +55,7 @@ const nodeHandler = (function () {
   };
 
   nh.mouseOverLink = function (d, i) {
-    if (d3.event.defaultPrevented) return; // dragged
+    if (d3.event.defaultPrevented) return;
     //debugger;
     console.log('mouseoverLink');
     d3.select(this).transition()
@@ -67,23 +67,40 @@ const nodeHandler = (function () {
       .style('display', 'inline-block');
     linkTooltipText.html(`${d.desc}`);
     linkTooltipTitle.html(`${d.source.ind_desc} and  ${d.target.ind_desc}`);
-    /*Decide where to show the link text*/
   };
 
   nh.mouseOutLink = function (d, i) {
-    if (d3.event.defaultPrevented) return; // dragged
-    //debugger;
+    if (d3.event.defaultPrevented) return;
     console.log('mouseoverLink');
     d3.select(this).transition()
       .attr('class', 'link');
     linkTooltip.style('display', 'none');
-    /*Decide where to show the link text*/
   };
 
   nh.transitionNodesSize = function (node, r) {
     d3.select(node).transition()
       //.attr("fill", "black")
       .attr("r", r);
+  };
+
+  nh.showAffords = function(d, i) {
+    svgGraph.selectAll('line')
+      .transition()
+      .attr('class', 'linkh');
+
+    svgGraph.selectAll('circle.affordOff')
+      .transition()
+      .attr('class', 'affordOn');
+  };
+
+  nh.hideAffords = function(d, i) {
+    svgGraph.selectAll('line')
+      .transition()
+      .attr('class', 'link');
+
+    svgGraph.selectAll('circle.affordOn')
+      .transition()
+      .attr('class', 'affordOff');
   };
 
   nh.drag = d3.drag()
@@ -166,7 +183,7 @@ const nodeHandler = (function () {
 const forceGraph = (function (config, eventHandler, dh) {
   const svg = config.svg;
   const [width, height] = [svg.attr('width'), svg.attr('height')];
-  const [labelsx, labelsy] = [width - 160, 20]
+  const [labelsx, labelsy] = [10, 20]
   //const svg = DOM.svg(width, height);
   const node_radius = config.node_radius;
   //const fg = {};
@@ -177,7 +194,7 @@ const forceGraph = (function (config, eventHandler, dh) {
         .distance(50)
         .id(d => d.ind_id))
       .force('charge', d3.forceManyBody().strength(-40))
-      .force('center', d3.forceCenter(width / 2 - 100, height / 2 - 20))
+      .force('center', d3.forceCenter(width / 2 - 20, height / 2 - 20))
       .nodes(dh.nodes);
     //.alphaMin(0.222);
 
@@ -202,23 +219,26 @@ const forceGraph = (function (config, eventHandler, dh) {
       .enter().append('g')
       .attr('class', 'node')
       .call(eventHandler.drag);
-    //.on('click', clicked);
 
     nodesel.append('circle')
+      .attr('class', 'affordOff')
       .attr('id', d => d.ind_id)
       .attr("fill", (d, i) => d3.schemeTableau10[d.cat_id - 1])
       .attr('r', node_radius);
 
     nodesel.selectAll("circle")
-      /*.call(d3.drag()
-                .on('start', dragstarted)
-                .on('drag', dragged)
-                .on('end', dragended)
-             )*/
       .on('click', eventHandler.clickedNode)
       .on('mouseover', eventHandler.mouseOverNode)
       .on('mouseout', eventHandler.mouseOutNode);
 
+    graphUtils.addAffordanceLegends({
+      g: ggraph,
+      node_radius: node_radius,
+      x: width/2+150,
+      y: 30,
+      mouseOver: eventHandler.showAffords,
+      mouseOut: eventHandler.hideAffords
+    });
 
     graphUtils.addLegends({
       svg: svg,

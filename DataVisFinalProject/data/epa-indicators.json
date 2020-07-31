@@ -8,16 +8,16 @@
         "fig_id": "global-ghg-emissions",
         "fig_type": "stackedBars",
         "ind_desc": "Global Greenhouse Gas Emissions",
-        "ind_text": "Every country around the world emits greenhouse gases into the atmosphere, meaning the root cause of climate change is truly global in scope. Some countries produce far more greenhouse gases than others, and several factors—such as economic activity (including the composition and efficiency of the economy), population, income level, land use, and climatic conditions—can influence a country’s emissions levels.",
+        "ind_text": "Increasing emissions of greenhouse gases due to human activities worldwide have led to a substantial increase in atmospheric concentrations of long-lived and other greenhouse gases. Every country around the world emits greenhouse gases into the atmosphere, meaning the root cause of climate change is truly global in scope. Some countries produce far more greenhouse gases than others, and several factors—such as economic activity (including the composition and efficiency of the economy), population, income level, land use, and climatic conditions—can influence a country’s emissions levels. Tracking greenhouse gas emissions worldwide provides a global context for understanding the United States’ and other nations’ roles in climate change.",
         "fig_desc": "In 2010, estimated worldwide emissions from human activities totaled nearly 46 billion metric tons of greenhouse gases, expressed as carbon dioxide equivalents. This represents a 35 percent increase from 1990. Energy production and use (including fuels used by vehicles) represent the largest source of greenhouse gas emissions worldwide (about 71 percent of the total in 2010), followed by agriculture (13 percent in 2010).",
         "links": []
       },
       {
         "ind_id": 13,
         "fig_id": "ghg-concentrations_fig",
-        "ind_desc": "Atmospheric Concentrations",
+        "ind_desc": "Atmospheric Concentrations of CO&#8322",
         "ind_text": "When greenhouse gases are emitted into the atmosphere, many remain there for long time periods ranging from a decade to many millennia. Over time, these gases are removed from the atmosphere by chemical reactions or by emissions sinks, such as the oceans and vegetation, which absorb greenhouse gases from the atmosphere. As a result of human activities, however, these gases are entering the atmosphere more quickly than they are being removed, and thus their concentrations are increasing.",
-        "fig_desc": "The data come from a variety of historical ice core studies and recent air monitoring sites around the world. Each line represents a different data source. Carbon dioxide concentrations have increased substantially since the beginning of the industrial era, rising from an annual average of 280 ppm in the late 1700s to 401 ppm as measured at Mauna Loa in 2015, a 43 percent increase. Almost all of this increase is due to human activities",
+        "fig_desc": "The data come from a variety of historical ice core studies and recent air monitoring sites around the world. Each line represents a different data source. Carbon dioxide concentrations have increased substantially since the beginning of the industrial era, rising from an annual average of 280 ppm (parts per million) in the late 1700s to 401 ppm as measured at Mauna Loa in 2015, a 43 percent increase. Almost all of this increase is due to human activities",
         "links": []
       }
     ]
@@ -30,9 +30,9 @@
         "ind_id": 21,
         "fig_id": "temperature_fig",
         "fig_type": "bars",
-        "ind_desc": "U.S. and Global Temperature",
+        "ind_desc": "Global Temperature",
         "ind_text": "Temperature is a fundamental measurement for describing the climate, and the temperature in particular places can have wide-ranging effects on human life and ecosystems. For example, increases in air temperature can lead to more intense heat waves, which can cause illness and death, especially in vulnerable populations. Annual and seasonal temperature patterns also determine the types of animals and plants that can survive in particular locations. Changes in temperature can disrupt a wide range of natural processes, particularly if these changes occur more quickly than plant and animal species can adapt.",
-        "fig_desc": "Worldwide, 2015 was the warmest year on record and 2006–2015 was the warmest decade on record since thermometer-based observations began. Global average surface temperature has risen at an average rate of 0.15°F per decade since 1901, similar to the rate of warming within the contiguous 48 states. Since the late 1970s, however, the United States has warmed faster than the global rate.",
+        "fig_desc": "Worldwide, 2015 was the warmest year on record and 2006–2015 was the warmest decade on record since thermometer-based observations began. Global average surface temperature has risen at an average rate of 0.15°F per decade since 1901. This graph uses the 1901–2000 average as a baseline for depicting change. Choosing a different baseline period would not change the shape of the data over time.",
         "links": []
       },
       {
@@ -87,7 +87,7 @@
         "fig_id": "ocean-acidity_fig",
         "ind_desc": "Ocean Acidity",
         "ind_text": "Carbon dioxide reacts with sea water to produce carbonic acid. The resulting increase in acidity (measured by lower pH values) changes the balance of minerals in the water. Declining pH can make it more difficult for some animals to thrive. This can lead to broader changes in the overall structure of ocean and coastal ecosystems, and can ultimately affect fish populations and the people who depend on them.",
-        "fig_desc": "The figure shows the relationship between changes in ocean carbon dioxide levels (left) and acidity (right). The up-and-down pattern shows the influence of seasonal variations. Measurements made over the last few decades have demonstrated that ocean carbon dioxide levels have risen in response to increased carbon dioxide in the atmosphere, leading to an increase in acidity (that is, a decrease in pH).",
+        "fig_desc": "The figure shows the relationship between changes in ocean carbon dioxide levels (left axis) and acidity (right axis). The up-and-down pattern shows the influence of seasonal variations. Measurements made over the last few decades have demonstrated that ocean carbon dioxide levels have risen in response to increased carbon dioxide in the atmosphere, leading to an increase in acidity (that is, a decrease in pH).",
         "links": []
       }
     ]
@@ -116,7 +116,7 @@
         "ind_id": 46,
         "fig_id": "snow-cover_fig",
         "ind_desc": "Snow Cover",
-        "ind_text": "As temperature and precipitation patterns change, so can the overall area covered by snow. it also exerts an influence on climate. Because snow is white, it absorbs only a small portion of the sunlight that hits it (10 to 20 percent in the case of fresh snow), and it reflects the rest back to space. More snow means more energy reflects back to space, resulting in cooling, while less snow cover means more energy is absorbed at the Earth’s surface, resulting in warming.",
+        "ind_text": "As temperature and precipitation patterns change, so can the overall area covered by snow. It also exerts an influence on climate. Because snow is white, it absorbs only a small portion of the sunlight that hits it (10 to 20 percent in the case of fresh snow), and it reflects the rest back to space. More snow means more energy reflects back to space, resulting in cooling, while less snow cover means more energy is absorbed at the Earth’s surface, resulting in warming.",
         "fig_desc": "Between 1972 and 2015, the average extent of North American snow cover decreased at a rate of about 3,300 square miles per year. Decreases in snow cover have largely occurred in spring and summer, whereas fall and winter snow cover have remained fairly steady over the time period studied. Spring and summer snow cover can have a particularly important influence on water supplies.",
         "links": []
       }
@@ -131,7 +131,7 @@
         "fig_id": "heat-illnesses_fig",
         "ind_desc": "Heat-Related Illnesses",
         "ind_text": "Heat-related illnesses can occur when a person is exposed to high temperatures, such that their body cannot cool itself sufficiently through sweating. Symptoms range from mild swelling, rashes, or cramps to potentially deadly heat exhaustion and heat stroke. Heat is the leading weather-related killer in the United States.",
-        "fig_desc": "From 2001 to 2010, 20 states recorded a total of about 28,000 heat-related hospitalizations. The resulting annual rates ranged from 1.1 cases per 100,000 people in 2004 to 2.5 cases per 100,000 people in 2006. The pattern largely matches the pattern in heat-related deaths during the same period. Considerable year-to-year variability makes it difficult to determine whether heat-related illnesses have increased or decreased to a meaningful degree since 2001.",
+        "fig_desc": "From 2001 to 2010, 20 states recorded a total of about 28,000 heat-related hospitalizations. The resulting annual rates ranged from 1.1 cases per 100,000 people in 2004 to 2.5 cases per 100,000 people in 2006. The pattern largely matches the pattern in <a href=\"https://www.epa.gov/climate-indicators/climate-change-indicators-heat-related-deaths\" target=\"_blank\">heat-related deaths</a> during the same period. Considerable year-to-year variability makes it difficult to determine whether heat-related illnesses have increased or decreased to a meaningful degree since 2001.",
         "links": []
       },
       {
@@ -160,7 +160,7 @@
         "ind_id": 61,
         "fig_id": "wildfires_fig",
         "ind_desc": "Wildfires",
-        "ind_text": "Together, forests, shrubland, and grassland cover more than half of the land area in the United States.1 These ecosystems are important resources, both environmentally and economically. Although wildfires occur naturally and play a long-term role in the health of these ecosystems, climate change threatens to increase the frequency, extent, and severity of fires through increased temperatures and drought.",
+        "ind_text": "Together, forests, shrubland, and grassland cover more than half of the land area in the United States. These ecosystems are important resources, both environmentally and economically. Although wildfires occur naturally and play a long-term role in the health of these ecosystems, climate change threatens to increase the frequency, extent, and severity of fires through increased temperatures and drought.",
         "fig_desc": "The extent of area burned by wildfires each year appears to have increased since the 1980s. According to National Interagency Fire Center data, of the 10 years with the largest acreage burned, nine have occurred since 2000, including the peak year in 2015. This period coincides with many of the warmest years on record nationwide.",
         "links": []
       },
