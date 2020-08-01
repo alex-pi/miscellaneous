@@ -3,11 +3,13 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   font-size: 14px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .container {
-  margin: 7px;
+  margin: 5px;
   text-align: center;
 }
 
@@ -44,6 +46,18 @@ div.main {
   justify-content: flex-end;
 }
 
+.justcenter {
+  justify-content: center;
+}
+
+.cleancolcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
 p.indtext {
   font-size: 14px;
   text-align: justify;
@@ -52,6 +66,12 @@ p.indtext {
 
 #ind_section > div{
   margin-left: 25px;
+}
+
+p.introtext {
+  width: 600px;
+  font-size: 12px;
+  margin: 6px 0px 6px;
 }
 
 p.indoverview {
@@ -74,14 +94,14 @@ p.indfigtext {
 h1, h2, h3 {
   color: #8d8b8b;
   font-family: 'Helvetica Neue', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
   text-align: center;
   background-color: rgba(232, 232, 232, 0.3);
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 h3 {
@@ -90,7 +110,7 @@ h3 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 18px;
   margin: 4px 20px 4px 20px;
 }
 
@@ -148,9 +168,18 @@ circle.affordOff {stroke: white; stroke-width: 1;}
 }
 
 /* Graph Indicators styles */
+.tickBaseLine line{
+  stroke: #454541;
+  stroke-width: 1.5;
+  stroke-dasharray: 5;
+}
+.tickBaseLine text{
+  fill: #8E8883;
+}
 .baseLine {
-  stroke-width: 2;
-  stroke-dasharray: 6;
+  stroke: #454541;
+  stroke-width: 1.5;
+  stroke-dasharray: 5;
 }
 .baseLineText {
   fill: #8E8883;

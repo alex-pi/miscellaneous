@@ -41,15 +41,15 @@
         "fig_type": "bars",
         "ind_desc": "Heavy Precipitation",
         "ind_text": "Climate change can affect the intensity and frequency of precipitation. Warmer oceans increase the amount of water that evaporates into the air. When more moisture-laden air moves over land or converges into a storm system, it can produce more intense precipitation—for example, heavier rain and snow storms.",
-        "fig_desc": "This figure shows the percentage of the land area of the contiguous 48 states where a much greater than normal portion of total annual precipitation has come from extreme single-day precipitation events. The bars represent individual years, while the line is a nine-year weighted average. Over the entire period from 1910 to 2015, the portion of the country experiencing extreme single-day precipitation events increased at a rate of about half a percentage point per decade.",
+        "fig_desc": "This figure shows the percentage of the land area of the contiguous 48 states where a much greater than normal portion of total annual precipitation has come from extreme single-day precipitation events. The bars represent individual years. Over the entire period from 1910 to 2015, the portion of the country experiencing extreme single-day precipitation events increased at a rate of about half a percentage point per decade.",
         "links": []
       },
       {
         "ind_id": 25,
         "fig_id": "cyclones_fig",
         "ind_desc": "Tropical Cyclone Activity",
-        "ind_text": "The effects of tropical cyclones are numerous and well known. At sea, storms disrupt and endanger shipping traffic. When cyclones encounter land, their intense rains and high winds can cause severe property damage, loss of life, soil erosion, and flooding. The associated storm surge—the large volume of ocean water pushed toward shore by the cyclone’s strong winds—can cause severe flooding and destruction.",
-        "fig_desc": "The Power Dissipation Index (PDI) shows fluctuating cyclone intensity for most of the mid to late 20th century, followed by a noticeable increase since 1995 (similar to Accumulated Cyclone Energy (ACE) Index). These trends are shown with associated variations in sea surface temperature in the tropical North Atlantic for comparison.",
+        "ind_text": "The effects of tropical cyclones are numerous and well known. At sea, storms disrupt and endanger shipping traffic. When cyclones encounter land, their intense rains and high winds can cause severe property damage, loss of life, soil erosion, and flooding. The associated storm surge—the large volume of ocean water pushed toward shore by the cyclone’s strong winds—can cause severe flooding and destruction. The U.S. Global Change Research Program and the Intergovernmental Panel on Climate Change project that, more likely than not, tropical cyclones will become more intense over the 21st century.",
+        "fig_desc": "The Power Dissipation Index (PDI) accounts for cyclone strength, duration, and frequency. This figure focuses on tropical cyclones in the Atlantic Ocean, Caribbean, and Gulf of Mexico. It shows fluctuating cyclone intensity for most of the mid to late 20th century, followed by a noticeable increase since 1995. These trends are shown with associated variations in sea surface temperature in the tropical North Atlantic for comparison. As for 2016, divergence between cyclone activity and sea surface temperature since ~2005 has not been identified conclusively, but it may relate to other factors that influence the formation of storms.",
         "links": []
       }
     ]
@@ -63,15 +63,15 @@
         "fig_id": "ocean_heat_fig",
         "ind_desc": "Ocean Heat",
         "ind_text": "When sunlight reaches the Earth’s surface, the world’s oceans absorb some of this energy and store it as heat. This heat is initially absorbed at the surface, but some of it eventually spreads to deeper waters. Increasing greenhouse gas concentrations are trapping more energy from the sun. Because changes in ocean systems occur over centuries, the oceans have not yet warmed as much as the atmosphere, even though they have absorbed more than 90 percent of the Earth’s extra heat since 1955.",
-        "fig_desc": "In three different data analyses, the long-term trend shows that the oceans have become warmer since 1955. For reference, an increase of 1 unit on this graph (1 x 1022 joules) is equal to approximately 18 times the total amount of energy used by all the people on Earth in a year. Year-to-year changes are influenced by events such as volcanic eruptions and recurring ocean-atmosphere patterns such as El Niño.",
+        "fig_desc": "In three different data analyses, the long-term trend shows that the oceans have become warmer since 1955. For reference, an increase of 1 unit on this graph (1 x 1022 joules) is equal to approximately 18 times the total amount of energy used by all the people on Earth in a year. Year-to-year changes are influenced by events such as volcanic eruptions and recurring ocean-atmosphere patterns such as El Niño. The lines were independently calculated using different methods by government agencies in three countries: the National Oceanic and Atmospheric Administration (NOAA), Australia’s Commonwealth Scientific and Industrial Research Organisation (CSIRO), and Japan Meteorological Agency’s Meteorological Research Institute (MRI/JMA).",
         "links": []
       },
       {
         "ind_id": 32,
         "fig_id": "sea-surface-temp_fig",
         "ind_desc": "Sea Surface Temperature",
-        "ind_text": "Changes in sea surface temperature can alter marine ecosystems in several ways. For example, variations in ocean temperature can affect what species of plants, animals, and microbes are present in a location, alter migration and breeding patterns, threaten sensitive ocean life such as corals.  Increases in sea surface temperature have led to an increase in the amount of atmospheric water vapor over the oceans.3 This water vapor feeds weather systems that produce precipitation, increasing the risk of heavy rain and snow.",
-        "fig_desc": "Sea surface temperature has been consistently higher during the past three decades than at any other time since reliable observations began in 1880. Based on the historical record, increases in sea surface temperature have largely occurred over two key periods: between 1910 and 1940, and from about 1970 to the present. The shaded band shows the range of uncertainty in the data, based on the number of measurements collected and the precision of the methods used.",
+        "ind_text": "Changes in sea surface temperature can alter marine ecosystems in several ways. For example, variations in ocean temperature can affect what species of plants, animals, and microbes are present in a location, alter migration and breeding patterns, threaten sensitive ocean life such as corals.  Increases in sea surface temperature have led to an increase in the amount of atmospheric water vapor over the oceans. This water vapor feeds weather systems that produce precipitation, increasing the risk of heavy rain and snow.",
+        "fig_desc": "Sea surface temperature has been consistently higher during the past three decades than at any other time since reliable observations began in 1880. Based on the historical record, increases in sea surface temperature have largely occurred over two key periods: between 1910 and 1940, and from about 1970 to the present. The green and blue lines show the range of uncertainty in the data, based on the number of measurements collected and the precision of the methods used.",
         "links": []
       },
       {
@@ -79,7 +79,7 @@
         "fig_id": "sea-level_fig",
         "ind_desc": "Sea Level",
         "ind_text": "Changing sea levels can affect human activities in coastal areas. Rising sea level inundates low-lying wetlands and dry land, erodes shorelines, contributes to coastal flooding, and increases the flow of salt water into estuaries and nearby groundwater aquifers.",
-        "fig_desc": "After a period of approximately 2,000 years of little change (not shown here), global average sea level rose throughout the 20th century, and the rate of change has accelerated in recent years. When averaged over all of the world's oceans, absolute sea level has risen at an average rate of 0.06 inches per year from 1880 to 2013. Since 1993, however, average sea level has risen at a rate of 0.11 to 0.14 inches per year, roughly twice as fast as the long-term trend.",
+        "fig_desc": "This graph shows cumulative changes in sea level for the world’s oceans since 1880. After a period of approximately 2,000 years of little change (not shown here), global average sea level rose throughout the 20th century, and the rate of change has accelerated in recent years. When averaged over all of the world's oceans, absolute sea level has risen at an average rate of 0.06 inches per year from 1880 to 2013. Since 1993, however, average sea level has risen at a rate of 0.11 to 0.14 inches per year, roughly twice as fast as the long-term trend.",
         "links": []
       },
       {
@@ -108,8 +108,8 @@
         "ind_id": 43,
         "fig_id": "glaciers_fig",
         "ind_desc": "Glaciers",
-        "ind_text": "Glaciers are important as an indicator of climate change because physical changes in glaciers—whether they are growing or shrinking, advancing or receding—provide visible evidence of changes in temperature and precipitation.",
-        "fig_desc": "All three U.S. benchmark glaciers have shown an overall decline in mass balance since the 1950s and 1960s and an accelerated rate of decline in recent years. Year-to-year trends vary, with some glaciers gaining mass in certain years (for example, Wolverine Glacier during the 1980s), but the measurements clearly indicate a loss of glacier mass over time.",
+        "ind_text": "A glacier is a large mass of snow and ice that has accumulated over many years and is present year-round. In the United States, glaciers can be found in the Rocky Mountains, the Sierra Nevada, the Cascades, and throughout Alaska. Glaciers are important as an indicator of climate change because physical changes in glaciers—whether they are growing or shrinking, advancing or receding—provide visible evidence of changes in temperature and precipitation.",
+        "fig_desc": "All three U.S. benchmark glaciers have shown an overall decline in mass balance since the 1950s and 1960s and an accelerated rate of decline in recent years. Year-to-year trends vary, with some glaciers gaining mass in certain years (for example, Wolverine Glacier during the 1980s), but the measurements clearly indicate a loss of glacier mass over time. Observations of glaciers losing mass are also consistent with warming trends in U.S. and global temperatures during this time period.",
         "links": []
       },
       {
@@ -169,15 +169,15 @@
         "fig_id": "bird-ranges_fig",
         "ind_desc": "Bird Wintering Ranges",
         "ind_text": "Some bird species can adapt to generally warmer temperatures by changing where they live—for example, by migrating farther north in the summer but not as far south in the winter, or by shifting inland as winter temperature extremes grow less severe. Non-migratory species might shift as well, expanding into newly suitable habitats while moving out of areas that become less suitable. Other types of birds might not adapt to changing conditions and could experience a population decline as a result.",
-        "fig_desc": "Among 305 widespread North American bird species, the average mid-December to early January center of abundance moved northward by more than 40 miles between 1966 and 2013. Trends in the center of abundance moving northward can be closely related to increasing winter temperatures. Some species have moved farther than others. A total of 48 species have moved northward by more than 200 miles.",
+        "fig_desc": "This figure shows annual change in latitude of bird center of abundance for 305 widespread bird species in North America from 1966 to 2013. Each winter is represented by the year in which it began (for example, winter 2013–2014 is shown as 2013). Among 305 widespread North American bird species, the average mid-December to early January center of abundance moved northward by more than 40 miles between 1966 and 2013. Trends in the center of abundance moving northward can be closely related to increasing winter temperatures. Some species have moved farther than others. A total of 48 species have moved northward by more than 200 miles.",
         "links": []
       },
       {
         "ind_id": 66,
         "fig_id": "marine-species_fig",
         "ind_desc": "Marine Species Distribution",
-        "ind_text": "Marine species represent a particularly good indicator of warming oceans because they are sensitive to climate and because they have been studied and tracked for many years. Fish are especially mobile, and they may shift their location more easily than species on land because they face fewer physical barriers.1 Also, many marine species, especially fish, do not have fixed nesting places or dwellings that might otherwise compel them to stay in one place.",
-        "fig_desc": "The average center of biomass for 105 marine fish and invertebrate species shifted northward by about 10 miles between 1982 and 2015. These species also moved an average of 20 feet deeper.",
+        "ind_text": "Marine species represent a particularly good indicator of warming oceans because they are sensitive to climate and because they have been studied and tracked for many years. Fish are especially mobile, and they may shift their location more easily than species on land because they face fewer physical barriers. Also, many marine species, especially fish, do not have fixed nesting places or dwellings that might otherwise compel them to stay in one place.",
+        "fig_desc": "This graph shows the annual change in latitude (movement in miles) and depth (feet) of 105 marine species along the Northeast coast and in the eastern Bering Sea. The average center of biomass for 105 marine fish and invertebrate species shifted northward by about 10 miles between 1982 and 2015. These species also moved an average of 20 feet deeper.",
         "links": []
       }
     ]

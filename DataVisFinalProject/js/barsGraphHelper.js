@@ -5,7 +5,7 @@ const barsGraphHelper = (function () {
     const svg = d3.select(`#${svgId}`);
 
     //const gc = _.merge(defaults, config);
-    const gc = lineGraphConfigs[idGraph];
+    const gc = graphConfigs[idGraph];
 
     svg.attr('width', gc.width);
     svg.attr('height', gc.height);
@@ -58,7 +58,7 @@ const barsGraphHelper = (function () {
 
     yAxisG.call(yAxis);
 
-    graphUtils.addBaseLine(viewPort, yAxisG, gc.baseLine);
+    graphUtils.addBaseLine(viewPort, yAxisG, gc.baseLine, yScale, gc);
 
     let rectY = d => yScale(d[gc.yFieldName]);
     let rectH = d => gc.innerHeight - yScale(d[gc.yFieldName]);
@@ -69,13 +69,13 @@ const barsGraphHelper = (function () {
       rectH = d => Math.abs(yScale(d[gc.yFieldName]) - baseYPoint);
     }
 
-    const aaa = viewPort.selectAll('rect')
+    viewPort.selectAll('rect')
       .data(data).enter()
       .append('rect')
-      .attr('class', d => {
-        if(!_.isNil(gc.baseDataPoint))
-          return d[gc.yFieldName] <= 0? 'blueBar':'redBar';
-        return 'neutralBar';
+      .attr('class', (d,a,b) => {
+        if(_.isFunction(gc.barStyle))
+          return gc.barStyle(gc.yFieldName)(d);
+        return gc.barStyle || 'neutralBar';
       })
       .attr('x', (d, i) => xScale(d[gc.xFieldName]))
       .attr('width', xScale.bandwidth())

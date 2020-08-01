@@ -194,7 +194,7 @@ const forceGraph = (function (config, eventHandler, dh) {
         .distance(50)
         .id(d => d.ind_id))
       .force('charge', d3.forceManyBody().strength(-40))
-      .force('center', d3.forceCenter(width / 2 - 20, height / 2 - 20))
+      .force('center', d3.forceCenter(width / 2 - 20, height / 2))
       .nodes(dh.nodes);
     //.alphaMin(0.222);
 

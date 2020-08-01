@@ -5,7 +5,7 @@ const stackBarsGraphHelper = (function () {
     const svg = d3.select(`#${svgId}`);
 
     //const gc = _.merge(defaults, config);
-    const gc = lineGraphConfigs[idGraph];
+    const gc = graphConfigs[idGraph];
 
     const formatValue = x => isNaN(x) ? "N/A" : x.toLocaleString("en")
 

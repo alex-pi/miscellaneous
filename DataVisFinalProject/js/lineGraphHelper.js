@@ -40,7 +40,7 @@ const lineGraphHelper = (function () {
   lgh.draw = function (svgId, idGraph, data) {
 
     const svg = d3.select(`#${svgId}`);
-    const config = lineGraphConfigs[idGraph];
+    const config = graphConfigs[idGraph];
 
     const defaults = {
       width: svg.attr('width'),

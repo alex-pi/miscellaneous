@@ -45,14 +45,19 @@ const graphUtils = (function(){
     return yAxisG2;
   };
 
-  utils.addBaseLine = function(g, axis, baseLine) {
+  utils.addBaseLine = function(g, axis, baseLine, yScale, gc) {
     if(_.isNil(baseLine)) return;
     if (!_.isNil(baseLine.point)) {
-      axis.selectAll("g")
-        .filter(d => d == baseLine.point)
-        .attr('class', 'baseLine');
-      //.style("stroke-width", 2)
-      //.style("stroke-dasharray", 6);
+      if(!_.isFunction(baseLine.point)) {
+        axis.selectAll("g")
+          .filter(d => d == baseLine.point)
+          .attr('class', 'tickBaseLine');
+      } else {
+        const yCoord = baseLine.point(yScale);
+        g.append("polyline")
+          .attr("class", "baseLine")
+          .attr("points", `0,${yCoord} , ${gc.innerWidth},${yCoord}`);
+      }
     }
 
     if (!_.isNil(baseLine.text)) {

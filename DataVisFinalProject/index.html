@@ -25,7 +25,7 @@
   <meta name="theme-color" content="#fafafa">
   <script src="js/graphUtils.js"></script>
   <script src="js/dataHelper.js"></script>
-  <script src="js/lineGraphConfigs.js"></script>
+  <script src="js/graphConfigs.js"></script>
   <script src="js/stackBarsGraphHelper.js"></script>
   <script src="js/barsGraphHelper.js"></script>
   <script src="js/main.js"></script>
@@ -33,12 +33,26 @@
 
 </head>
 
-<body id="body_page"><a href="404.html" ></a>
+<body id="body_page">
+
+<div id="intro_section" class="main container">
+  <h1>EPA Climate Change Indicators</h1>
+  <div class="cleancolcontainer">
+  <p class="indtext introtext">In 2016 the EPA (Environmental Protection Agency) presented an comprehensive report
+    (found <a href="https://www.epa.gov/climate-indicators/downloads-indicators-report" target="_blank">here</a>)
+    on the different indicators for climate change. The agency processed and categorized data from other agencies to create this report.
+    Unfortunately, the agency hasn't produced a similar report as of 2020. In that sense, this page is a shout out to the scientific
+    community to keep up the good work.</p>
+  <p class="indtext introtext">This page presents some of those indicators and how they are related. The text content are extracts from the EPA report with almost no
+    paraphrasing from my side. The reader should consider that my intention is to present correlations amongst the indicators and not
+  to drive conclusions on this very complex topic.</p>
+  </div>
+</div>
 
 <div id="main_section" class="main container">
-  <h1>Climate Change Indicators in the United States</h1>
+  <h2>Navigate the Climate Change Indicators</h2>
   <div class="container">
-    <svg id="main-graph" width="690" height="340"></svg>
+    <svg id="main-graph" width="690" height="320"></svg>
   </div>
   <h2 id="ind_title">[Select an indicator node from the graph]</h2>
   <div id="ind_section" class="flexcolumn padded">

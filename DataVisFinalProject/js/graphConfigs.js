@@ -1,4 +1,4 @@
-const lineGraphConfigs = (function () {
+const graphConfigs = (function () {
   const configs = {};
 
   configs['glaciers_fig'] = (function () {
@@ -14,11 +14,17 @@ const lineGraphConfigs = (function () {
       yDomain: yDomain,
       xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
       baseLine: {
-        point: 0
+        point: 0,
+        text: 'Negative values indicate loss of mass',
+        xy: [270, 30]
       },
       legends: {
         x: 90,
-        y: 190
+        y: 190,
+        bg: {
+          width: 144,
+          height: 60
+        }
       }
     }
 
@@ -41,7 +47,7 @@ const lineGraphConfigs = (function () {
       baseLine: {
         point: 0,
         text: "Long-term average",
-        xy: [20, height / 2 - 43],
+        xy: [20, height / 2 - 43]
       },
       annotations: [{
         text: point => `${point.yval.toFixed(2)} days deviation from average`,
@@ -78,13 +84,28 @@ const lineGraphConfigs = (function () {
       xTickValues: _.range(xDomain[0], xDomain[1] + 10, 10),
       baseLine: {
         point: 0,
-        text: "1971-2000 Average",
-        xy: [20, height / 2 + 3],
+        text: "1971-2000 Average (set at zero for reference)",
+        xy: [5, height / 2 -13],
       },
       legends: {
         x: width / 4,
-        y: 45
-      }
+        y: 45,
+        bg: {
+          width: 70,
+          height: 60
+        }
+      },
+      freeTexts: [{
+        x: 290,
+        y: 33,
+        text: 'Ocean heat measured by',
+        styleClass: 'indAnnotationsSmall'
+      },{
+        x: 290,
+        y: 48,
+        text: 'different agencies',
+        styleClass: 'indAnnotationsSmall'
+      }]
     };
 
     return gc;
@@ -163,9 +184,21 @@ const lineGraphConfigs = (function () {
       xDomain: xDomain,
       xTickValues: _.range(xDomain[0], xDomain[1] + 10, 10),
       legends: {
-        x: 100,
-        y: 53
-      }
+        x: 85,
+        y: 53,
+        bg: {
+          width: 277,
+          height: 41
+        }
+      },
+      annotations: [{
+        text: 'Divergence from temperature',
+        xDataPoint: 2007,
+        yOffSet: 100,
+        xOffSet: -60,
+        seriesIndex: 0,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -235,9 +268,28 @@ const lineGraphConfigs = (function () {
       yDomain: yDomain,
       legends: {
         x: 90,
-        y: height - 120
+        y: height - 120,
+        bg: {
+          width: 170,
+          height: 41
+        }
       },
-      xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5)
+      xTickValues: _.range(xDomain[0], xDomain[1] + 5, 5),
+      annotations: [{
+        text: 'Lowest extent on record for September',
+        xDataPoint: 2016,
+        yOffSet: -53,
+        xOffSet: -90,
+        seriesIndex: 0,
+        markPoint: true
+      },{
+        text: 'Lowest extent on record for March',
+        xDataPoint: 2015,
+        yOffSet: 30,
+        xOffSet: -80,
+        seriesIndex: 1,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -249,7 +301,7 @@ const lineGraphConfigs = (function () {
     const xDomain = [1965, 2015];
     const yDomain = [-20, 80];
     const [width, height] = [550, 350];
-    const colorBounds = d3.schemeSet3[5];
+    //const colorBounds = d3.schemeSet3[5];
 
     const ySeries = [{
       domain: yDomain,
@@ -265,7 +317,7 @@ const lineGraphConfigs = (function () {
     const gc = {
       width: width,
       height: height,
-      xAxisTitle: 'Year',
+      xAxisTitle: "Each Year's winter",
       separateScales: false,
       ySeries: ySeries,
       xDomain: xDomain,
@@ -282,7 +334,15 @@ const lineGraphConfigs = (function () {
           width: 155,
           height: 63
         }
-      }
+      },
+      annotations: [{
+        text: '305 species have moved an average of 40 miles north',
+        xDataPoint: 2013,
+        yOffSet: 140,
+        xOffSet: -150,
+        seriesIndex: 0,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -388,9 +448,28 @@ const lineGraphConfigs = (function () {
       xDomain: xDomain,
       xTickValues: _.range(xDomain[0], xDomain[1], 5),
       legends: {
-        x: width / 3,
-        y: 36
-      }
+        x: width / 5,
+        y: 36,
+        bg: {
+          width: 186,
+          height: 38
+        }
+      },
+      annotations: [{
+        text: 'Moved northward about 10 mi',
+        xDataPoint: 2015,
+        yOffSet: -30,
+        xOffSet: -83,
+        seriesIndex: 0,
+        markPoint: true
+      },{
+        text: 'Moved 20 feet deeper',
+        xDataPoint: 2015,
+        yOffSet: 20,
+        xOffSet: -75,
+        seriesIndex: 1,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -414,8 +493,23 @@ const lineGraphConfigs = (function () {
       },
       legends: {
         x: width / 4,
-        y: 50
-      }
+        y: 50,
+        bg: {
+          width: 190,
+          height: 40
+        }
+      },
+      freeTexts: [{
+        x: 130,
+        y: 114,
+        text: 'Since 1993, average sea level has risen',
+        styleClass: 'indAnnotationsSmall'
+      },{
+        x: 130,
+        y: 129,
+        text: 'at a rate of 0.11 to 0.14 inches per year',
+        styleClass: 'indAnnotationsSmall'
+      }]
     };
 
     return gc;
@@ -426,7 +520,7 @@ const lineGraphConfigs = (function () {
     const xDomain = [1880, 2020];
     const yDomain = [-2, 2];
     const [width, height] = [550, 350];
-    const colorBounds = d3.schemeSet3[5];
+    const colorBounds = '#9acb8d';
 
     const ySeries = [{
       domain: yDomain,
@@ -446,13 +540,29 @@ const lineGraphConfigs = (function () {
       separateScales: false,
       ySeries: ySeries,
       xDomain: xDomain,
-      colorScheme: [d3.schemeSet3[2], colorBounds, colorBounds],
+      colorScheme: [d3.schemeSet3[3], '#8da0cb', '#9acb8d'],
       xTickValues: _.range(xDomain[0], xDomain[1] + 20, 20),
       baseLine: {
         point: 0,
         text: "1971-2000 Average",
         xy: [20, height / 2 - 45],
-      }
+      },
+      legends: {
+        x: 80,
+        y: 40,
+        bg: {
+          width: 198,
+          height: 62
+        }
+      },
+      annotations: [{
+        text: "Sea surface temperature has been increasing since 1970",
+        xDataPoint: 1970,
+        yOffSet: 100,
+        xOffSet: -80,
+        seriesIndex: 0,
+        markPoint: true
+      }]
     };
 
     return gc;
@@ -581,7 +691,27 @@ const lineGraphConfigs = (function () {
       yAxisTitle: 'Percent of land area',
       yDomain: yDomain,
       yTickValues: _.range(0, 30, 5),
-      xTickValues: _.range(1910, 2020, 10)
+      xTickValues: _.range(1910, 2020, 10),
+      barStyle: fn => {
+        debugger;
+        return d => d[fn] < 10.5? 'neutralBar':'redBar'
+      },
+      baseLine: {
+        point: scale => scale(10.5),
+        text: "1910–2015 average is 10.5",
+        xy: [158, height / 2 - 25],
+      },
+      freeTexts: [{
+        x: 160,
+        y: 20,
+        text: 'The percentage of land with extreme',
+        styleClass: 'indAnnotationsSmall'
+      },{
+        x: 160,
+        y: 35,
+        text: 'single-day precipitation events has increased',
+        styleClass: 'indAnnotationsSmall'
+      }]
     }
     return gc;
   })();
@@ -601,6 +731,9 @@ const lineGraphConfigs = (function () {
       yTickValues: _.range(-3, 5),
       xTickValues: _.range(1900, 2020, 10),
       baseDataPoint: 0,
+      barStyle: fieldName => {
+        return d => d[fieldName] <= 0? 'blueBar':'redBar'
+      },
       baseLine: {
         //point: 0,
         text: "1901–2000 average as a baseline",
